@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Category;
 use App\Models\Gallery;
+use App\Models\Category;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -64,15 +65,16 @@ class CategoryController extends Controller
             'category_name' => 'required',
         ]);
         $category = Category::find($id);
-        $gallery = Gallery::where('category_id', $id);
+        /* -------------------------- hiding all galleries -------------------------- */
+        $gallery = DB::table('galleries')->where('category_id', $id);
+
         $category->category_name = $request['category_name'];
         if ($request->status == "on") {
             $category->status = 'active';
         } else {
             $category->status = 'inactive';
-            $gallery->update([
-                'status' => 'inactive'
-            ]);
+
+            $gallery->update(['status' => 'inactive']);
         }
         $category->save();
         return redirect('project');
