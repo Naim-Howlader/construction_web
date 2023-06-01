@@ -58,7 +58,10 @@
                                         class="text-xs border text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
-                                                Project Id
+                                                #sl
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Status
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Project Title
@@ -82,6 +85,15 @@
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     {{ $sl++ }}
                                                 </th>
+                                                <td class="px-6 py-4">
+                                                    @if ($item->status == 'active')
+                                                        <p class="chips bg-green-400">{{ $item->status }}</p>
+                                                    @elseif($item->status == 'inactive')
+                                                        <p class="chips bg-red-400">{{ $item->status }}</p>
+                                                    @else
+                                                        <p class="chips bg-yellow-200">{{ $item->status }}</p>
+                                                    @endif
+                                                </td>
                                                 <td class="px-6 py-4">
                                                     {{ $item->title }}
                                                 </td>
@@ -129,6 +141,9 @@
                                                 Category Id
                                             </th>
                                             <th scope="col" class="px-6 py-3">
+                                                Status
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
                                                 Category Name
                                             </th>
                                             <th scope="col" class="px-6 py-3">
@@ -149,6 +164,15 @@
                                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                                     {{ $num++ }}
                                                 </th>
+                                                <td class="px-6 py-4">
+                                                    @if ($item->status == 'active')
+                                                        <p class="chips bg-green-400">{{ $item->status }}</p>
+                                                    @elseif($item->status == 'inactive')
+                                                        <p class="chips bg-red-400">{{ $item->status }}</p>
+                                                    @else
+                                                        <p class="chips bg-yellow-200">{{ $item->status }}</p>
+                                                    @endif
+                                                </td>
                                                 <td class="px-6 py-4">
                                                     {{ $item->category_name }}
                                                 </td>

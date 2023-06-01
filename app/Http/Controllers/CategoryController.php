@@ -19,11 +19,15 @@ class CategoryController extends Controller
 
     public function insert(Request $request)
     {
+        // return $request->all();
         $request->validate([
             'category_name' => 'required',
         ]);
         $category = new Category;
         $category->category_name = $request['category_name'];
+        if ($request->status == "on") {
+            $category->status = 'active';
+        }
         $category->save();
         return redirect()->route('project');
     }
@@ -55,11 +59,21 @@ class CategoryController extends Controller
     }
     public function catUpdate($id, Request $request)
     {
+
         $request->validate([
             'category_name' => 'required',
         ]);
         $category = Category::find($id);
+        $gallery = Gallery::where('category_id', $id);
         $category->category_name = $request['category_name'];
+        if ($request->status == "on") {
+            $category->status = 'active';
+        } else {
+            $category->status = 'inactive';
+            $gallery->update([
+                'status' => 'inactive'
+            ]);
+        }
         $category->save();
         return redirect('project');
     }
