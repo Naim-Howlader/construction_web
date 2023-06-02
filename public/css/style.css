@@ -81,21 +81,28 @@
 /* ------------------------------ water effect ------------------------------ */
 
 /* play btn css  */
-.play-video span {
+.play-video label {
     position: relative;
-    /* z-index: 4; */
+    z-index: 4;
+
+    cursor: zoom-in;
 }
-.play-video span::after {
+.play-video span {
     position: absolute;
-    height: 100%;
-    width: 100%;
     border-radius: 50%;
     content: "";
     background: #ff0000;
     z-index: -1;
 }
-.play-video:hover span::after {
+.play-video:hover span:nth-child(1) {
     animation: playbtn 0.5s ease-in-out forwards;
+}
+.play-video span:nth-child(2) {
+    height: 140%;
+    width: 140%;
+    opacity: 0.5;
+    animation: playbtn 1.5s ease-in-out both;
+    animation-iteration-count: infinite;
 }
 @keyframes playbtn {
     0% {
