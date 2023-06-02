@@ -1,30 +1,37 @@
 @extends('frontend.layouts.master')
 @section('main')
     {{-- hero section starts  --}}
-    <section class="mb-4">
-        <div
-            class="item z-5 py-10 bg-[url('https://assets-us-01.kc-usercontent.com/fa776f1a-4d27-4a6b-ae1c-2ce928f9647d/9cd8ea0f-679b-4ed3-a238-3ee8a3c5ea98/construction-site-Cropped2.jpg')] bg-cover bg-center bg-no-repeat relative before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-black before:opacity-[0.4] before:z-0">
-            <div class="px-5 max-w-[1200px] mx-auto z-10 relative select-none">
-                <div class="flex flex-col items-center justify-center md:items-start uppercase min-h-screen">
-                    <h6
-                        class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary">
-                        Hand car wash and dealing service</h6>
-                    <h1
-                        class="text-4xl sm:text-6xl md:text-[90px] lg:text-[120px] font-black font-heading md:px-10 text-[#e74c3c] z-5 leading-[-1]">
-                        Advanced
-                    </h1>
-                    <h1
-                        class="lg:text-end md:w-full text-4xl sm:text-6xl md:text-[90px] lg:text-[120px] font-black font-heading  md:px-10 text-[#e74c3c] z-5">
-                        Construction
-                    </h1>
-                    <a href="#">
+    <section class="mb-4 owl-carousel" id="hero-section">
+        @for ($i = 0; $i < 3; $i++)
+            <div
+                class="item z-5 py-10 bg-[url('https://assets-us-01.kc-usercontent.com/fa776f1a-4d27-4a6b-ae1c-2ce928f9647d/9cd8ea0f-679b-4ed3-a238-3ee8a3c5ea98/construction-site-Cropped2.jpg')] bg-cover bg-center bg-no-repeat relative before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-black before:opacity-[0.4] before:z-0">
+                <div class="px-5 max-w-[1200px] mx-auto z-10 relative select-none">
+                    <div class="flex flex-col items-center justify-center md:items-start uppercase min-h-screen">
                         <h6
-                            class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
-                            Our services</h6>
-                    </a>
+                            class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary">
+                            Hand car wash and dealing service</h6>
+                        <h1
+                            class="text-4xl sm:text-6xl md:text-[90px] lg:text-[120px] font-black font-heading md:px-10 text-[#ff0000] z-5 leading-[-1]">
+                            Advanced
+                        </h1>
+                        <div
+                            class="water-effect lg:text-end md:w-full text-4xl h-[2.5rem] sm:text-6xl sm:h-[4.75rem] md:h-[90px] md:text-[90px] lg:h-[120px] lg:text-[120px] font-black font-heading  md:px-10 outline-2 outline-[#e74c3c] z-5">
+                            <h1 class="stroke-2 w-full">
+                                Construction
+                            </h1>
+                            <h1 class=" w-full">
+                                Construction
+                            </h1>
+                        </div>
+                        <a href="#">
+                            <h6
+                                class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
+                                Our services</h6>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endfor
     </section>
     {{-- hero section ends --}}
     <div class="about-section px-5 sm:px-20 md:px-14 lg:px-20 lg:grid grid-cols-12 py-12">
@@ -307,35 +314,42 @@
             <h2 class="text-3xl font-montserrat font-bold">RECENT PROJECTS</h2>
         </div>
         <div class="recent-link-section overflow-x-hidden w-fit mx-auto">
-            <ul class="flex flex-wrap space-x-4 filter-button-group gap-y-5">
-                <li data-filter="*" class="cursor-pointer px-4 uppercase text-sm font-montserrat font-bold">show all</li>
+            <ul class="flex flex-wrap space-x-2 filter-button-group gap-y-5" id="gallery-tab">
+                <li data-filter="*"
+                    class="active cursor-pointer py-2 px-4 rounded-t uppercase text-sm font-montserrat font-bold">
+                    show all
+                </li>
                 @foreach ($categories as $category)
-                    <li data-filter=".commercial" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
+                    <li data-filter=".{{ str_replace(' ', '_', $category->category_name) }}"
+                        class="cursor-pointer py-2 px-4 rounded-t uppercase-sm text-sm font-montserrat font-bold">
                         {{ $category->category_name }}
                     </li>
                 @endforeach
             </ul>
-            <div class="pt-5 pb-14 px-0">
+            <div class=" pb-14 px-0">
                 <div class="line bg-primary w-full h-1"></div>
             </div>
         </div>
-        {{ $categories }}
-        @foreach ($categories as $item)
-            <div class="gallery recent-image-section " id="item">
-                <div class="grid-item government healthcare w-full sm:w-6/12 lg:w-4/12 group">
+
+        <div class="gallery recent-image-section " id="item">
+
+            @foreach ($galleries as $gallery)
+                <div
+                    class="grid-item {{ str_replace(' ', '_', $gallery->category->category_name) }} w-full sm:w-6/12 lg:w-4/12 group">
                     <div class="relative overflow-hidden">
-                        <a href="{{ asset('image/project1.jpg') }}">
-                            <img src="{{ asset('image/project1.jpg') }}" alt=""srcset=""
-                                class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                        </a>
+                        <img src="{{ asset($gallery->image) }}" alt=""
+                            class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
                         <div
                             class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <ion-icon name="add-outline"
-                                class="text-white absolute top-0 btn right-0 text-3xl  bg-primary font-bold">
-                            </ion-icon>
+                            <a href="{{ asset($gallery->image) }}" class="show-image">
+                                <ion-icon name="add-outline"
+                                    class="text-white  absolute top-0  right-0 text-3xl  bg-primary font-bold">
+                                </ion-icon>
+                            </a>
                             <div class="absolute inset-y-1/3 px-10 mx-auto">
 
-                                <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
+                                <h2 class="text-white font-montserrat text-xl font-bold uppercase">
+                                    {{ $gallery->title }}
                                 </h2>
                                 <h2
                                     class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
@@ -346,15 +360,37 @@
                         </div>
                     </div>
                 </div>
-        @endforeach
-
+            @endforeach
+        </div>
 
 
     </div>
-    <div class="recent-button-section pt-10 pb-14 mx-auto w-fit">
-        <button class="font-montserrat text-base rounded text-white bg-primary px-5 py-2 font-bold uppercase">view all
-            projects</button>
+    <div class="recent-button-section pt-10 pb-14 mx-auto w-fit block">
+        <a href="#"
+            class="uppercase font-montserrat focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">view
+            all
+            projects</a>
     </div>
     </div>
     <!----------Recent Project section end here--------->
 @endsection
+
+
+@push('hero-section-js')
+    <script>
+        $('#hero-section').owlCarousel({
+            animateOut: 'slideOutDown',
+            animateIn: 'fadeIn',
+            items: 1,
+            margin: 0,
+            nav: false,
+            dots: false,
+            loop: true,
+            smartSpeed: 450
+        });
+        $("#gallery-tab li").on('click', function() {
+            $(this).addClass('active')
+            $(this).siblings().hasClass('active') ? $(this).siblings().removeClass('active') : ""
+        })
+    </script>
+@endpush

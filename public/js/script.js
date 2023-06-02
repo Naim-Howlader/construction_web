@@ -10,48 +10,40 @@ jQuery(document).ready(function ($) {
     });
 
     // init Isotope
-    var $grid = $('#item').isotope({
+    var $grid = $("#item").isotope({
         // options
-
     });
     // filter items on button click
-    $('.filter-button-group').on('click', 'li', function () {
-        var filterValue = $(this).attr('data-filter');
+    $(".filter-button-group").on("click", "li", function () {
+        var filterValue = $(this).attr("data-filter");
         $grid.isotope({ filter: filterValue });
     });
-    $('.btn').magnificPopup({
-        items: [
-            {
-                src: 'image/project1.jpg'
-            },
-            {
-                src: 'image/project2.jpg',
+    $(".show-image").magnificPopup({
+        type: "image",
+        preloader: true,
+        removalDelay: 300,
+        mainClass: "mfp-fade",
+        image: {
+            markup:
+                '<div class="mfp-figure">' +
+                '<div class="mfp-close"></div>' +
+                '<div class="mfp-img"></div>' +
+                '<div class="mfp-bottom-bar">' +
+                '<div class="mfp-title">Something</div>' +
+                '<div class="mfp-counter"></div>' +
+                "</div>" +
+                "</div>",
 
-            },
-            {
-                src: 'image/project3.jpg', // Dynamically created element
+            cursor: "mfp-zoom-out-cur",
 
-            },
-            {
-                src: 'image/project4.jpg',
+            titleSrc: "Something",
 
-            },
-            {
-                src: 'image/project5.jpg',
+            verticalFit: true,
 
-            },
-            {
-                src: 'image/project6.jpg',
-
-            },
-
-        ],
-        gallery: {
-            enabled: true
+            tError: '<a href="%url%">The image</a> could not be loaded.', // Error message
         },
-        type: 'image' // this is default type
+        gallery: {
+            enabled: true,
+        },
     });
-
 });
-
-

@@ -26,6 +26,8 @@
 
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- cusom css  --}}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 
 <body class="font-body dark:bg-slate-800">
