@@ -1,4 +1,4 @@
-<div class="absolute top-0 left-0 w-full ring-1 bg-[#253149e6] text-white z-50">
+<div class="absolute top-0 left-0 w-full  bg-[#253149e6] text-white z-50 hidden lg:block">
     <div class="flex justify-between px-5 sm:px-20 md:px-14 lg:px-20 text-sm text-thin border-b border-gray-600">
         <div class="flex justify-between py-2 gap-4">
             <p>+(123) 1234-567-8901</p>

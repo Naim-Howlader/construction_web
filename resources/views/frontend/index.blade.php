@@ -1,6 +1,33 @@
 @extends('frontend.layouts.master')
 @section('main')
-    <div class="about-section px-5 sm:px-20 md:px-14 lg:px-24 lg:grid grid-cols-12">
+    {{-- hero section starts  --}}
+    <section class="mb-4">
+        <div
+            class="item z-5 py-10 bg-[url('https://assets-us-01.kc-usercontent.com/fa776f1a-4d27-4a6b-ae1c-2ce928f9647d/9cd8ea0f-679b-4ed3-a238-3ee8a3c5ea98/construction-site-Cropped2.jpg')] bg-cover bg-center bg-no-repeat relative before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-black before:opacity-[0.4] before:z-0">
+            <div class="px-5 max-w-[1200px] mx-auto z-10 relative select-none">
+                <div class="flex flex-col items-center justify-center md:items-start uppercase min-h-screen">
+                    <h6
+                        class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary">
+                        Hand car wash and dealing service</h6>
+                    <h1
+                        class="text-4xl sm:text-6xl md:text-[90px] lg:text-[120px] font-black font-heading md:px-10 text-[#e74c3c] z-5 leading-[-1]">
+                        Advanced
+                    </h1>
+                    <h1
+                        class="lg:text-end md:w-full text-4xl sm:text-6xl md:text-[90px] lg:text-[120px] font-black font-heading  md:px-10 text-[#e74c3c] z-5">
+                        Construction
+                    </h1>
+                    <a href="#">
+                        <h6
+                            class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
+                            Our services</h6>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- hero section ends --}}
+    <div class="about-section px-5 sm:px-20 md:px-14 lg:px-20 lg:grid grid-cols-12 py-12">
         <div class="about-main lg:col-span-6 lg:pr-5">
             <h3 class="uppercase mt-3 text-lg text-gray-600 font-montserrat">about us</h3>
             <h1 class="uppercase text-3xl font-extrabold mt-3 font-montserrat">we delivered landmark projects</h1>
@@ -50,7 +77,7 @@
                         <h2 id="accordion-collapse-heading-1">
                             <button type="button"
                                 class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border  border-gray-300 "
-                                data-accordion-target="#accordion-collapse-body-1" aria-expanded="false"
+                                data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
                                 aria-controls="accordion-collapse-body-1">
                                 <span class="uppercase font-montserrat font-bold text-md">Safety</span>
                                 <svg data-accordion-icon class="w-6 h-6 shrink-0 bg-black rounded-sm text-white"
@@ -282,171 +309,52 @@
         <div class="recent-link-section overflow-x-hidden w-fit mx-auto">
             <ul class="flex flex-wrap space-x-4 filter-button-group gap-y-5">
                 <li data-filter="*" class="cursor-pointer px-4 uppercase text-sm font-montserrat font-bold">show all</li>
-                <li data-filter=".commercial" class="cursor-pointer uppercase text-sm font-montserrat font-bold">commerial
-                </li>
-                <li data-filter=".educational" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
-                    educational</li>
-                <li data-filter=".government" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
-                    government</li>
-                <li data-filter=".infrastructure" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
-                    INFRASTRUCTURE</li>
-                <li data-filter=".residential" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
-                    RESIDENTIAL</li>
-                <li data-filter=".healthcare" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
-                    HEALTHCARE</li>
+                @foreach ($categories as $category)
+                    <li data-filter=".commercial" class="cursor-pointer uppercase text-sm font-montserrat font-bold">
+                        {{ $category->category_name }}
+                    </li>
+                @endforeach
             </ul>
             <div class="pt-5 pb-14 px-0">
                 <div class="line bg-primary w-full h-1"></div>
             </div>
         </div>
-        <div class="gallery recent-image-section " id="item">
-            <div class="grid-item government healthcare w-full sm:w-6/12 lg:w-4/12 group">
-                <div class="relative overflow-hidden">
-                    <a href="{{ asset('image/project1.jpg') }}">
-                        <img src="{{ asset('image/project1.jpg') }}" alt=""srcset=""
-                            class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                    </a>
-                    <div
-                        class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <ion-icon name="add-outline"
-                            class="text-white absolute top-0 btn right-0 text-3xl  bg-primary font-bold">
-                        </ion-icon>
-                        <div class="absolute inset-y-1/3 px-10 mx-auto">
+        {{ $categories }}
+        @foreach ($categories as $item)
+            <div class="gallery recent-image-section " id="item">
+                <div class="grid-item government healthcare w-full sm:w-6/12 lg:w-4/12 group">
+                    <div class="relative overflow-hidden">
+                        <a href="{{ asset('image/project1.jpg') }}">
+                            <img src="{{ asset('image/project1.jpg') }}" alt=""srcset=""
+                                class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
+                        </a>
+                        <div
+                            class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                            <ion-icon name="add-outline"
+                                class="text-white absolute top-0 btn right-0 text-3xl  bg-primary font-bold">
+                            </ion-icon>
+                            <div class="absolute inset-y-1/3 px-10 mx-auto">
 
-                            <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
-                            </h2>
-                            <h2
-                                class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
-                                commercial
-                                interior
-                            </h2>
+                                <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
+                                </h2>
+                                <h2
+                                    class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
+                                    commercial
+                                    interior
+                                </h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="grid-item commercial educational infrastructure w-full sm:w-6/12 lg:w-4/12 group">
-                <div class="relative overflow-hidden">
-                    <img src="{{ asset('image/project2.jpg') }}" alt=""srcset=""
-                        class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                    <div
-                        class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <ion-icon name="add-outline"
-                            class="text-white absolute top-0 btn
-                        right-0 text-3xl bg-primary font-bold btn">
-                        </ion-icon>
-                        <div class="absolute inset-y-1/3 px-10 mx-auto">
-
-                            <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
-                            </h2>
-                            <h2
-                                class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
-                                commercial
-                                interior
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item government educational healthcare w-full sm:w-6/12 lg:w-4/12 group">
-                <div class="relative overflow-hidden">
-                    <img src="{{ asset('image/project3.jpg') }}" alt=""srcset=""
-                        class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                    <div
-                        class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <ion-icon name="add-outline"
-                            class="text-white btn absolute top-0 right-0 text-3xl  bg-primary font-bold">
-                        </ion-icon>
-                        <div class="absolute inset-y-1/3 px-10 mx-auto">
-
-                            <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
-                            </h2>
-                            <h2
-                                class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
-                                commercial
-                                interior
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item residential educational healthcare w-full sm:w-6/12 lg:w-4/12 group">
-                <div class="relative overflow-hidden">
-                    <img src="{{ asset('image/project4.jpg') }}" alt=""srcset=""
-                        class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                    <div
-                        class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <ion-icon name="add-outline"
-                            class="text-white absolute btn top-0 right-0 text-3xl  bg-primary font-bold">
-                        </ion-icon>
-                        <div class="absolute inset-y-1/3 px-10 mx-auto">
-
-                            <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
-                            </h2>
-                            <h2
-                                class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
-                                commercial
-                                interior
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item government infrastructure w-full sm:w-6/12 lg:w-4/12 group">
-                <div class="relative overflow-hidden">
-                    <img src="{{ asset('image/project5.jpg') }}" alt=""srcset=""
-                        class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                    <div
-                        class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <ion-icon name="add-outline"
-                            class="text-white absolute btn top-0 right-0 text-3xl  bg-primary font-bold">
-                        </ion-icon>
-                        <div class="absolute inset-y-1/3 px-10 mx-auto">
-
-                            <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
-                            </h2>
-                            <h2
-                                class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
-                                commercial
-                                interior
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid-item residential infrastructure commercial w-full sm:w-6/12 lg:w-4/12 group">
-                <div class="relative overflow-hidden">
-                    <img src="{{ asset('image/project6.jpg') }}" alt=""srcset=""
-                        class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
-                    <div
-                        class="absolute h-full w-full bg-black/60  -bottom-40 group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                        <ion-icon name="add-outline"
-                            class="text-white absolute top-0 right-0 text-3xl  bg-primary font-bold">
-                        </ion-icon>
-                        <div class="absolute inset-y-1/3 px-10 mx-auto">
-
-                            <h2 class="text-white font-montserrat text-xl font-bold uppercase">capital teltway building
-                            </h2>
-                            <h2
-                                class="text-white font-montserrat text-xs font-bold uppercase bg-primary w-44 py-2 text-center mt-4">
-                                commercial
-                                interior
-                            </h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        @endforeach
 
 
-        </div>
-        <div class="recent-button-section pt-10 pb-14 mx-auto w-fit">
-            <button class="font-montserrat text-base rounded text-white bg-primary px-5 py-2 font-bold uppercase">view all
-                projects</button>
-        </div>
+
+    </div>
+    <div class="recent-button-section pt-10 pb-14 mx-auto w-fit">
+        <button class="font-montserrat text-base rounded text-white bg-primary px-5 py-2 font-bold uppercase">view all
+            projects</button>
+    </div>
     </div>
     <!----------Recent Project section end here--------->
 @endsection
