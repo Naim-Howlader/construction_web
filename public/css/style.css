@@ -79,6 +79,37 @@
     }
 }
 /* ------------------------------ water effect ------------------------------ */
+
+/* play btn css  */
+.play-video span {
+    position: relative;
+    /* z-index: 4; */
+}
+.play-video span::after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    content: "";
+    background: #ff0000;
+    z-index: -1;
+}
+.play-video:hover span::after {
+    animation: playbtn 0.5s ease-in-out forwards;
+}
+@keyframes playbtn {
+    0% {
+        height: 100%;
+        width: 100%;
+    }
+    100% {
+        height: 250%;
+        width: 250%;
+        opacity: 0;
+    }
+}
+/* play btn css  */
+
 /* ------------------------------ gallery tab starts ------------------------------ */
 #gallery-tab li {
     transition: 0.3s;

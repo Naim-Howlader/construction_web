@@ -5,7 +5,7 @@
         @for ($i = 0; $i < 3; $i++)
             <div
                 class="item z-5 py-10 bg-[url('https://assets-us-01.kc-usercontent.com/fa776f1a-4d27-4a6b-ae1c-2ce928f9647d/9cd8ea0f-679b-4ed3-a238-3ee8a3c5ea98/construction-site-Cropped2.jpg')] bg-cover bg-center bg-no-repeat relative before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-black before:opacity-[0.4] before:z-0">
-                <div class="px-5 max-w-[1200px] mx-auto z-10 relative select-none">
+                <div class="px-5 max-w-[1200px] mx-auto z-10 relative select-none ">
                     <div class="flex flex-col items-center justify-center md:items-start uppercase min-h-screen">
                         <h6
                             class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary">
@@ -28,7 +28,17 @@
                                 class="font-heading font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
                                 Our services</h6>
                         </a>
+                        <div class="w-full text-center absolute bottom-10">
+                            <a href="https://www.youtube.com/watch?v=FQPlEnKav48&t=58s&pp=ygUSYmVzdCB3ZWIgZnJhbWV3b3Jr"
+                                class="play-video">
+                                <span
+                                    class="text-2xl text-white p-4 inline-flex items-center justify-center bg-primary rounded-full">
+                                    <ion-icon name="play"></ion-icon>
+                                </span>
+                            </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         @endfor
@@ -141,7 +151,8 @@
                                 </svg>
                             </button>
                         </h2>
-                        <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
+                        <div id="accordion-collapse-body-3" class="hidden"
+                            aria-labelledby="accordion-collapse-heading-3">
                             <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
                                 <p class="mb-2 text-gray-500 dark:text-gray-400">Anim pariatur cliche reprehenderit, enim
                                     eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
@@ -376,8 +387,9 @@
 @endsection
 
 
-@push('hero-section-js')
+@push('home-page-js')
     <script>
+        // hero section slider
         $('#hero-section').owlCarousel({
             animateOut: 'slideOutDown',
             animateIn: 'fadeIn',
@@ -388,9 +400,33 @@
             loop: true,
             smartSpeed: 450
         });
+        // active gallery tab
         $("#gallery-tab li").on('click', function() {
             $(this).addClass('active')
             $(this).siblings().hasClass('active') ? $(this).siblings().removeClass('active') : ""
         })
+        // video popup
+        $('.play-video').magnificPopup({
+            type: 'iframe',
+            preloader: true,
+            removalDelay: 300,
+            mainClass: 'mfp-fade',
+            iframe: {
+                markup: '<div class="mfp-iframe-scaler">' +
+                    '<div class="mfp-close "></div>' +
+                    '<iframe class="mfp-iframe" frameborder="0" allowfullscreen></iframe>' +
+                    '</div>',
+
+                patterns: {
+                    youtube: {
+                        index: 'youtube.com/',
+
+                        id: 'v=',
+
+                        src: 'https://www.youtube.com/embed/FQPlEnKav48'
+                    },
+                }
+            }
+        });
     </script>
 @endpush
