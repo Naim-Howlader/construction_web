@@ -10,4 +10,7 @@ class CommonController extends Controller
     {
         return view('frontend.index');
     }
+    public function news(){
+        return view('frontend.news');
+    }
 }

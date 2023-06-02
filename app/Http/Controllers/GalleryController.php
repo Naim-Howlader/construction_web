@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Gallery;
 use App\Models\Category;
+use Illuminate\Support\Facades\File;
 
 class GalleryController extends Controller
 {
@@ -30,6 +31,9 @@ class GalleryController extends Controller
         $gallery->title = $request['title'];
         $gallery->category_id = $request['category'];
         $gallery->image = $destination . $image;
+        if ($request->status == "on") {
+            $gallery->status = 'active';
+        }
         $gallery->save();
         $gallery = Gallery::with('category')->get();
         $category = Category::get();
@@ -52,4 +56,43 @@ class GalleryController extends Controller
         //redirect to gallery page with success message
         return redirect('/project');
     }
+    public function edit($id){
+        $gallery = Gallery::find($id);
+        if(empty($gallery)){
+            return view('project');
+        }
+        $url = url('/gallery/update-gallery') . '/' . $id;
+        $category = Category::get();
+        $data = compact('gallery','category','url');
+        return view('update-gallery')->with($data);
+
+    }
+    public function update($id, Request $request){
+
+
+
+        $gallery = Gallery::find($id);
+        $gallery->title = $request['title'];
+        $gallery->category_id = $request['category'];
+        if($request->hasFile('image')){
+            $destination = 'uploads/images/'.$gallery->image;
+            if(File::exists($destination)){
+                File::delete($destination);
+            }
+            $image = $request->file('image')->getClientOriginalName();
+            $destination = "uploads/images/";
+            $request->image->move(public_path($destination), $image);
+            $gallery->image = $destination . $image;
+        }
+        if ($request->status == "on") {
+            $gallery->status = 'active';
+        } else {
+            $gallery->status = 'inactive';
+
+
+        }
+        $gallery->update();
+        return redirect('project');
+    }
+
 }
