@@ -67,6 +67,9 @@
                                                 Project Title
                                             </th>
                                             <th scope="col" class="px-6 py-3">
+                                                Project Category
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
                                                 Project Image
                                             </th>
                                             <th scope="col" class="px-6 py-3">
@@ -98,12 +101,15 @@
                                                     {{ $item->title }}
                                                 </td>
                                                 <td class="px-6 py-4">
+                                                    {{ $item->category->category_name }}
+                                                </td>
+                                                <td class="px-6 py-4">
                                                     <a class="cursor-zoom" href="{{ asset($item->image) }}"><img
                                                             src="{{ asset($item->image) }}" class="w-60 object-contain"
                                                             alt=" {{ $item->title }} image"></a>
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    <a href="">
+                                                    <a href="{{route('gallery.edit', ['id'=>$item->gallery_id])}}">
                                                         <button type="button"
                                                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
                                                     </a>

@@ -14,4 +14,7 @@ class CommonController extends Controller
         $galleries = Gallery::with('category')->where('status', 'active')->take(12)->get();
         return view('frontend.index', ['categories' => $categories,'galleries'=>$galleries]);
     }
+    public function news(){
+        return view('frontend.news');
+    }
 }
