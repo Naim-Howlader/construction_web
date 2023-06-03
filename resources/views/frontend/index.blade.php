@@ -53,7 +53,8 @@
         <div class="about-main lg:col-span-6 lg:pr-5">
             <h3 class="uppercase mt-3 text-lg text-gray-600 font-montserrat">about us</h3>
             <h1 class="uppercase text-3xl font-extrabold mt-3 font-montserrat">we delivered landmark projects</h1>
-            <p class="mt-3 leading-7 text-gray-600 text-base">We are rethoric question ran over her cheek When she reached
+            <p class="mt-3 leading-7 text-gray-600 text-base text-justify">We are rethoric question ran over her cheek When
+                she reached
                 the first hills
                 of the
                 Italic
@@ -378,17 +379,107 @@
                 </div>
             @endforeach
         </div>
+        <div class="recent-button-section pt-10 pb-14 mx-auto w-fit block">
+            <a href="#"
+                class="uppercase font-montserrat focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">view
+                all
+                projects</a>
+        </div>
+
+    </div>
 
 
-    </div>
-    <div class="recent-button-section pt-10 pb-14 mx-auto w-fit block">
-        <a href="#"
-            class="uppercase font-montserrat focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 ">view
-            all
-            projects</a>
-    </div>
-    </div>
     <!----------Recent Project section end here--------->
+
+    {{-- /* ------------------------------- client area ------------------------------ */ --}}
+    <section class="client-section p-5 sm:p-20 md:p-14 ">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex flex-col md:flex-row gap-y-8">
+                <div class=" basis-full md:basis-[50%]  p-4 md:p-8">
+                    <h4 class="text-2xl font-montserrat uppercase font-bold text-center md:text-left">
+                        TESTIMONIALS
+                    </h4>
+                    <div class="owl-carousel max-w-[400px] " id="client-carousel">
+                        @for ($i = 0; $i < 3; $i++)
+                            <div class="flex flex-col">
+                                <div class="my-8 flex gap-4 ">
+                                    <blockquote class=" italic font-semibold text-gray-900 dark:text-white  ">
+                                        <svg aria-hidden="true" class="w-14 h-14 text-gray-400 dark:text-gray-600"
+                                            viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z"
+                                                fill="currentColor" />
+                                        </svg>
+
+                                    </blockquote>
+                                    <i class="text-sm font-montserrat  leading-relaxed ">"Flowbite is just awesome. It
+                                        contains tons of predesigned components and pages starting from
+                                        login screen to complex dashboard. Perfect choice for your next SaaS
+                                        application."</i>
+                                </div>
+
+                                <div class="gap-4 mt-12 mx-auto">
+                                    <div class="flex items-center space-x-4 font-montserrat">
+                                        <img class="w-18 h-18 max-w-[4.5rem] rounded-md"
+                                            src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
+                                            alt="">
+                                        <div class="font-semibold text-primary">
+                                            <div>Jese Leos</div>
+                                            <div class="text-sm text-gray-500 dark:text-gray-400">Director, AKT</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endfor
+                    </div>
+                </div>
+                <div class=" basis-full md:basis-[50%] p-4 md:p-8">
+                    <h4 class="text-2xl font-montserrat uppercase font-bold text-center md:text-left">
+                        Happy Client
+                    </h4>
+                    <div class="grid grid-flow-row grid-cols-2  md:grid-cols-1 lg:grid-cols-3 gap-4 mt-12">
+                        @for ($i = 0; $i < 9; $i++)
+                            <div class="ring-1 ring-gray-300 h-20 p-3 place-content-center">
+                                <img src="https://demo.themefisher.com/constra/images/clients/client1.png"
+                                    class="h-12 object-contain w-full grayscale" alt="">
+                            </div>
+                        @endfor
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- /* ------------------------------- client area ------------------------------ */ --}}
+
+    {{-- news letter section --}}
+    <section class="news-letter-section  bg-primary overflow-x-hidden w-full mb-12">
+        <div class="max-w-[1200px] mx-auto">
+            <div class="flex flex-col md:flex-row  justify-center">
+                <div class="basis-full md:basis-[30%] font-bold font-montserrat text-center py-7">
+                    <h4 class="text-xl">CAN WE HELP?</h4>
+                    <h4 class="text-2xl text-white">(+9) 847-291-4353</h4>
+                </div>
+                <div
+                    class="basis-[85%] mx-auto md:basis-[70%] font-montserrat  text-white bg-black relative after:content-[''] after:absolute after:w-0 md:after:w-full after:h-full after:left-full after:bg-black after:top-0 opacity-1 md:after:opacity-1 py-7">
+                    <div class="flex flex-col lg:flex-row items-center justify-center">
+                        <div class="basis-full lg:basis-[50%]  p-4 md:px-8 lg:px-12">
+                            <h4 class="text-2xl font-bold">NEWSLETTER SIGN-UP</h4>
+                            <p class="text-sm">Latest updates and news</p>
+                        </div>
+                        <div class="basis-full lg:basis-[50%]  font-montserrat text-center px-4 ">
+                            <form action="" method="post">
+                                <input type="text"
+                                    class="p-3 bg-black w-full ring-1 ring-slate-600 focus:ring-slate-500 outline-none border-none"
+                                    placeholder="your email here">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {{-- news letter section --}}
 @endsection
 
 
@@ -405,6 +496,7 @@
             loop: true,
             smartSpeed: 450
         });
+
         // active gallery tab
         $("#gallery-tab li").on('click', function() {
             $(this).addClass('active')
@@ -432,6 +524,16 @@
                     },
                 }
             }
+        });
+        // client-carousel
+        $('#client-carousel').owlCarousel({
+
+            items: 1,
+            margin: 0,
+            nav: false,
+            dots: true,
+            loop: false,
+            smartSpeed: 450
         });
     </script>
 @endpush

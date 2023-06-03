@@ -100,7 +100,7 @@
 .play-video span:nth-child(2) {
     height: 140%;
     width: 140%;
-    opacity: 0.5;
+    opacity: 0.7;
     animation: playbtn 1.5s ease-in-out both;
     animation-iteration-count: infinite;
 }
@@ -127,3 +127,30 @@
     transition: 0.3s;
 }
 /* ------------------------------ gallery tab ends ------------------------------ */
+/* ------------------------------client-carousel starts ------------------------------ */
+#client-carousel {
+    position: relative;
+}
+#client-carousel .owl-dots {
+    position: absolute;
+    width: 100%;
+    bottom: -40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#client-carousel .owl-dots .owl-dot {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 50%;
+
+    background-color: #a5a2a2;
+    border: 1px solid #a5a2a2;
+}
+#client-carousel .owl-dots .owl-dot.active {
+    background-color: #ff0000;
+    border: 1px solid #cc0000;
+}
+/* ------------------------------ client-carousel ends ------------------------------ */
