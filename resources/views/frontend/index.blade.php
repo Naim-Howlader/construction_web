@@ -12,16 +12,16 @@
                                 class="font-raleway font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
                                 Car Was and dealing service</h6>
                         </a>
-                        <h1
-                            class="text-4xl sm:text-6xl md:text-[80px] lg:text-[120px] font-black font-heading md:px-10 text-[#ff0000] z-5 leading-[-1]">
+                        <h1 class="text-4xl sm:text-6xl md:text-[80px] lg:text-[120px] font-black font-raleway md:px-10 text-[#ff0000] z-5 leading-[-1] "
+                            style="-webkit-text-stroke: 2px">
                             Advanced
                         </h1>
                         <div
-                            class="water-effect text-center lg:text-end w-full text-4xl h-[20px] sm:text-6xl sm:h-[40px] md:h-[80px] md:text-[80px] lg:h-[120px] lg:text-[120px] font-black font-heading  md:px-10 outline-2 outline-[#e74c3c] z-5">
-                            <h1 class="stroke-2 lg:w-full">
+                            class="water-effect text-center lg:text-end w-full text-4xl h-[20px] sm:text-6xl sm:h-[40px] md:h-[80px] md:text-[80px] lg:h-[120px] lg:text-[120px] font-black font-raleway  md:px-10 outline-2 outline-[#e74c3c] z-5">
+                            <h1 class="stroke-2 lg:w-full left-0 md:right-0">
                                 Construction
                             </h1>
-                            <h1 class=" lg:w-full">
+                            <h1 class=" lg:w-full left-0 md:right-0">
                                 Construction
                             </h1>
                         </div>
@@ -234,8 +234,8 @@
                 <h2 class="text-lg font-light font-raleway">WE ARE SPECIALISTS IN</h2>
                 <h2 class="text-4xl font-extrabold font-heading">WHAT WE DO</h2>
             </div>
-            <div class="specialists-content lg:grid lg:grid-cols-12">
-                <div class="content-grp-1 space-y-12 lg:col-span-4">
+            <div class="specialists-content lg:grid lg:grid-cols-12 lg:items-end">
+                <div class="content-grp-1 space-y-12 lg:col-span-4 pb-20">
                     <div class="single-item flex space-x-8">
                         <div class="single-item-icon">
                             <ion-icon name="business-outline" class="text-6xl text-primary"></ion-icon>
@@ -278,9 +278,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="content-grp-2 lg:col-span-4">
-                    <img src="{{ asset('image/service-center.jpg') }}" alt=""
-                        class="pt-14 max-w-[300px] mx-auto lg:pt-0 ">
+                <div class="content-grp-2 lg:col-span-4 pb-10 lg:pb-0">
+                    <img loading="lazy" src="{{ asset('image/service-center.jpg') }}" alt=""
+                        class="pt-14 max-w-[350px] mx-auto lg:pt-0 ">
                 </div>
                 <div class="content-grp-3 lg:col-span-4 space-y-12 pb-20">
                     <div class="single-item flex space-x-8">
@@ -362,8 +362,8 @@
                 <div
                     class="grid-item {{ str_replace(' ', '_', $gallery->category->category_name) }} w-full sm:w-6/12 lg:w-4/12 group">
                     <div class="relative overflow-hidden">
-                        <img src="{{ asset($gallery->image) }}" alt=""
-                            class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700">
+                        <img loading="lazy" src="{{ asset($gallery->image) }}" alt=""
+                            class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700 ">
                         <div
                             class="absolute h-full w-full bg-black/60 group-hover:bg-opacity-[0.4]  bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                             <a href="{{ asset($gallery->image) }}" class="show-image">
@@ -387,7 +387,7 @@
         </div>
         <div class="recent-button-section pt-10 pb-14 mx-auto w-fit block">
             <a href="#"
-                class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-4 mr-2 mb-2 ">View
+                class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300  rounded-md text-sm px-5 py-4 mr-2 mb-2 uppercase font-bold">View
                 all
                 projects</a>
         </div>
@@ -426,7 +426,7 @@
 
                                 <div class="gap-4 mt-12 mx-auto">
                                     <div class="flex items-center space-x-4 font-raleway">
-                                        <img class="w-18 h-18 max-w-[4.5rem] rounded-md"
+                                        <img loading="lazy" class="w-18 h-18 max-w-[4.5rem] rounded-md"
                                             src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
                                             alt="">
                                         <div class="font-semibold text-primary">
@@ -446,7 +446,8 @@
                     <div class="grid grid-flow-row grid-cols-2  md:grid-cols-1 lg:grid-cols-3 gap-4 mt-12">
                         @for ($i = 0; $i < 9; $i++)
                             <div class="ring-1 ring-gray-300 h-20 p-3 place-content-center">
-                                <img src="https://static.vecteezy.com/system/resources/previews/007/794/715/original/construction-logo-template-suitable-for-construction-company-brand-format-and-easy-to-edit-free-vector.jpg"
+                                <img loading="lazy"
+                                    src="https://static.vecteezy.com/system/resources/previews/007/794/715/original/construction-logo-template-suitable-for-construction-company-brand-format-and-easy-to-edit-free-vector.jpg"
                                     class="h-12 object-contain w-full grayscale" alt="">
                             </div>
                         @endfor
@@ -467,7 +468,7 @@
                     <h4 class="text-2xl text-white">(+9) 847-291-4353</h4>
                 </div>
                 <div
-                    class="basis-[85%] mx-auto md:basis-[70%] font-raleway  text-white bg-black relative after:content-[''] after:absolute after:w-0 md:after:w-full after:h-full after:left-full after:bg-black after:top-0 opacity-1 md:after:opacity-1 py-7">
+                    class="basis-full mx-auto md:basis-[70%] w-full md:w-auto max-w-[500px] md:max-w-none font-raleway  text-white bg-black relative after:content-[''] after:absolute after:w-0 md:after:w-full after:h-full after:left-full after:bg-black after:top-0 opacity-1 md:after:opacity-1 py-7">
                     <div class="flex flex-col lg:flex-row items-center justify-center">
                         <div class="basis-full lg:basis-[50%]  p-4 md:px-8 lg:px-12">
                             <h4 class="text-2xl font-bold">NEWSLETTER SIGN-UP</h4>
@@ -499,12 +500,15 @@
                 @for ($i = 0; $i < 3; $i++)
                     <div class="single-item md:col-span-6 lg:col-span-4 group overflow-hidden">
                         <a href="">
-                            <img src="{{ asset('image/news2.jpg') }}"
+                            <img loading="lazy" src="{{ asset('image/news2.jpg') }}"
                                 class="object-cover opacity-[0.7] group-hover:scale-110 group-hover:opacity-100  duration-200"
                                 alt="" srcset="">
                             <h2
-                                class="pt-5 pb-1 text-lg font-semibold font-raleway group-hover:text-primary transition-all duration-300">
-                                WE JUST COMPLETES $17.6 MILLION MEDICAL CLINIC IN MID-MISSOURI</h2>
+                                class="pt-5 pb-1 text-lg font-semibold font-raleway group-hover:text-primary transition-all duration-300 text-limit">
+                                WE JUST COMPLETES $17.6 MILLION
+                                MEDICAL CLINIC IN MID-MISSOURI
+                                MEDICAL CLINIC IN MID-MISSOURI
+                            </h2>
                             <h2 class="font-raleway text-sm text-gray-600 opacity-100 duration-200 group-hover:opacity-0">
                                 JULY 20, 2017</h2>
                         </a>
@@ -516,7 +520,7 @@
             <div class="news-btn-section flex justify-center pb-14">
 
                 <a href="#"
-                    class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300 font-medium rounded-md text-sm px-5 py-4 mr-2 mb-2 ">View
+                    class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300 font-bold rounded-md text-sm px-5 py-4 mr-2 mb-2 uppercase">View
                     all
                     posts</a>
             </div>
@@ -586,9 +590,7 @@
             // i += 1
             $(this).find(`#accordion-collapse-heading-${index+=1}`).on('click', function(e) {
                 $(this).find("button").toggleClass('text-black text-gray-500')
-                e.preventDefault();
-                ($(
-                    `#custom-accordion-collapse-body-${index}`).toggle("3000"))
+                $(`#custom-accordion-collapse-body-${index}`).toggle("3000")
                 $(this).find('svg').toggleClass("rotate-180 bg-black bg-primary")
             })
         })

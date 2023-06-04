@@ -16,8 +16,7 @@
         id="nav-sticky">
         <div>
             <a href="{{ route('home') }}">
-                <img src="https://preview.colorlib.com/theme/constructioncompany/assets/img/logo/logo.png"
-                    class="h-[52px]" alt="">
+                <img src="{{ env('APP_LOGO') }}" class="h-[52px]" alt="">
             </a>
         </div>
         <div>

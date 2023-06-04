@@ -12,7 +12,7 @@
 
 @layer base {
     .font-heading {
-        font-family: "Barlow", sans-serif;
+        font-family: "Barlow", "Raleway";
     }
     .font-raleway {
         /* font-family: "Montserrat", sans-serif; */
