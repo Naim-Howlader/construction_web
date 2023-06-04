@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+/* times new roman  */
+@import url("https://fonts.cdnfonts.com/css/times-new-roman");
+/* geologica font */
+@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+/* raleway font  */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,11 +14,15 @@
     .font-heading {
         font-family: "Barlow", sans-serif;
     }
-    .font-montserrat {
-        font-family: "Montserrat", sans-serif;
+    .font-raleway {
+        /* font-family: "Montserrat", sans-serif; */
+        font-family: "Raleway", sans-serif;
+        @apply font-[400];
     }
     .font-body {
-        font-family: "Roboto", sans-serif;
+        /* font-family: "Times New Roman", sans-serif; */
+        font-family: "Geologica", sans-serif;
+        @apply font-[200];
     }
     .text-limit {
         overflow: hidden;

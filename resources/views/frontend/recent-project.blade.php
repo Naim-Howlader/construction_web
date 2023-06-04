@@ -1,4 +1,4 @@
-<!----------Recent Project section start here--------->
+{{-- <!----------Recent Project section start here--------->
 <div class="recent-project-section  bg-[#F9F9F9] pt-20 px-5 sm:px-14 md:px-10">
     <div class="recent-text text-center pb-20">
         <h2 class="text-lg font-montserrat text-gray-500">WORK OF EXCELLENCE</h2>
@@ -173,4 +173,4 @@
             projects</button>
     </div>
 </div>
-<!----------Recent Project section end here--------->
+<!----------Recent Project section end here---------> --}}
