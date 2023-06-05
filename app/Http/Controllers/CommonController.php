@@ -20,4 +20,12 @@ class CommonController extends Controller
     {
         return view('frontend.news');
     }
+    public function projects()
+    {
+        $title = "Projects";
+        $categories = Category::where('status', 'active')->latest()->get();
+        $galleries = Gallery::with('category')->where('status', 'active')->get();
+        $data = compact('categories', 'galleries','title');
+        return view('frontend.projects', $data);
+    }
 }

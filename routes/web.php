@@ -22,11 +22,17 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 |
 */
 
+/* -------------------------------------------------------------------------- */
+/*                               Frontend routes starts                       */
+/* -------------------------------------------------------------------------- */
 Route::get('/', [CommonController::class, 'index'])->name('home');
-Route::get('/recent-project', [CommonController::class, 'news'])->name('recent-project');
-Route::get('/about', function () {
-    return view('frontend.about');
-});
+Route::get('/projects', [CommonController::class, 'projects'])->name('common.projects');
+
+
+
+/* -------------------------------------------------------------------------- */
+/*                               Frontend routes ends                         */
+/* -------------------------------------------------------------------------- */
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -44,7 +50,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 
-//----------Custome Route----------
+//----------Customer Route----------
 Route::middleware('auth')->group(function () {
     //---------For entering into the project section in admin panel
     Route::get('/project', [CategoryController::class, 'projectView'])->name('project');
@@ -69,7 +75,7 @@ Route::middleware('auth')->group(function () {
     //---------For entering into the news section in admin panel
     Route::get('/news', [NewsCategoryController::class, 'newsView'])->name('news');
     //---------News Category Route--------
-    Route::group(['prefix' => 'news', 'as' => 'category.'], function(){
+    Route::group(['prefix' => 'news', 'as' => 'category.'], function () {
         Route::get('/add-category', [NewsCategoryController::class, 'addNewsCat'])->name('add');
         Route::post('/insert-category', [NewsCategoryController::class, 'insert'])->name('insert');
         Route::get('/delete-category/{id}', [NewsCategoryController::class, 'destroy'])->name('delete');
@@ -77,7 +83,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/update-category/{id}', [NewsCategoryController::class, 'update'])->name('update');
     });
     //---------News Route---------
-    Route::group(['prefix' => 'news', 'as' => 'news.'], function(){
+    Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
         Route::get('/add-news', [NewsController::class, 'addNews'])->name('add');
         Route::post('/insert-news', [NewsController::class, 'insert'])->name('insert');
         Route::get('/delete-news/{id}', [NewsController::class, 'destroy'])->name('delete');
@@ -86,8 +92,8 @@ Route::middleware('auth')->group(function () {
     });
 
     //---------User Route---------
-        Route::get('/users', [UserController::class, 'usersView'])->name('users');
-         Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
-         Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::get('/users', [UserController::class, 'usersView'])->name('users');
+    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+    Route::post('register', [RegisteredUserController::class, 'store']);
 
 });

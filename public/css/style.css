@@ -1,6 +1,18 @@
 /* -------------------------------------------------------------------------- */
 /*                                 custom css                                 */
 /* -------------------------------------------------------------------------- */
+
+::-moz-selection {
+    /* Code for Firefox */
+    background: red;
+    color: white;
+}
+
+::selection {
+    background: red;
+    color: white;
+}
+
 /* mobile nav css  */
 .mobile-nav-area {
     clip-path: circle(28px at 90% 53px);

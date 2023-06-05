@@ -386,7 +386,7 @@
             @endforeach
         </div>
         <div class="recent-button-section pt-10 pb-14 mx-auto w-fit block">
-            <a href="#"
+            <a href="{{ route('common.projects') }}"
                 class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300  rounded-md text-sm px-5 py-4 mr-2 mb-2 uppercase font-bold">View
                 all
                 projects</a>
