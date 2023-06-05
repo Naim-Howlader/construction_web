@@ -12,24 +12,28 @@
                     <div class="grid grid-cols-12">
                         <div class="col-span-3"></div>
                         <div class="col-span-6">
-                            <h2 class="text-center text-2xl pb-10">Update Project</h2>
-                            <form method="post" action="{{ $url }}" enctype="multipart/form-data">
+                            <h2 class="text-center text-2xl pb-10">Update News</h2>
+                            <form method="post" action="{{$url}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="mb-6">
                                     <label for="title"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                                    <input type="text" id="title" name="title" value="{{$gallery->title}}"
+                                    <input type="text" id="title" name="title" value="{{$news->title}}"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        @error('title')
-                                           <span class="text-red-500"> {{$message}}</span>
-                                        @enderror
+
+                                </div>
+                                <div class="mb-6">
+                                    <label for="description"
+                                        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">News Description</label>
+                                    <textarea name="description" id="description" cols="30" rows="5" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">{{$news->description}}</textarea>
+
                                 </div>
                                 <div class="mb-6">
                                     <label for="image"
                                         class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Image</label>
-                                    <input type="file" id="image" name="image" sec="{{$gallery->image}}"
+                                    <input type="file" id="image" name="image"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                        <img src="{{asset($gallery->image)}}" alt="" width="100px">
+                                        <img src="{{asset($news->image)}}" class="w-60" alt="" srcset="">
                                 </div>
 
                                 <div class="mb-6">
@@ -39,33 +43,30 @@
                                         category</label>
                                     <select id="category" name="category"
                                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-
-                                        <option value="{{$gallery->category->category_id}}">{{$gallery->category->category_name}}</option>
-                                        @foreach ($category as $item)
-                                            @if ($item->status == 'active')
-
-                                                <option value="{{ $item->category_id }}">{{ $item->category_name }}
-                                                </option>
-                                            @endif
+                                        <option value="{{$news->category->category_id}}">{{$news->category->category_name}}</option>
+                                        @foreach ($categories as $item)
+                                            <option value="{{$item->category_id}}">{{$item->category_name}}</option>
                                         @endforeach
                                     </select>
 
                                 </div>
-
                                 <label class="relative  items-center cursor-pointer inline-block">
-                                    @if (isset($gallery))
-                                        <input type="checkbox" @if ($gallery->status == 'active') checked @endif
-                                            name="status" class="sr-only peer">
-                                    @else
-                                        <input type="checkbox" name="status" class="sr-only peer">
+                                    @if ($news->status == 'active')
+                                    <input type="checkbox"
+                                    name="status" class="sr-only peer" checked>
                                     @endif
+                                    <input type="checkbox"
+                                    name="status" class="sr-only peer">
+
                                     <div
                                         class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                                     </div>
 
-                                </label><br><br>
+                                </label><br>
+
+
                                 <button type="submit"
-                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+                                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
                             </form>
                         </div>
                         <div class="col-span-3">

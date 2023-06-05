@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('news_categories', function (Blueprint $table) {
             $table->id('category_id');
             $table->string('category_name');
+            $table->string('status',20)->default('pending');
             $table->timestamps();
         });
     }

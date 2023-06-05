@@ -29,6 +29,7 @@ class CategoryController extends Controller
         if ($request->status == "on") {
             $category->status = 'active';
         }
+        session()->flash('success', 'Category created successfully');
         $category->save();
         return redirect()->route('project');
     }
@@ -43,6 +44,7 @@ class CategoryController extends Controller
     {
         $category = Category::find($id);
         $category->delete();
+        session()->flash('success', 'Category removed successfully');
         return redirect('project');
     }
     public function catEdit($id)
@@ -76,6 +78,7 @@ class CategoryController extends Controller
 
             $gallery->update(['status' => 'inactive']);
         }
+        session()->flash('success', 'Category updated successfully');
         $category->save();
         return redirect('project');
     }

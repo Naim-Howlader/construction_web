@@ -45,9 +45,9 @@
                             {{--News table--}}
                             <div class="flex justify-between">
                                 <h2 class="text-2xl pb-5">News Table</h2>
-                                <a href=""><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add News</button></a>
+                                <a href="{{route('news.add')}}"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add News</button></a>
                             </div>
-                            <div class="relative overflow-x-auto">
+                            <div class="relative ">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border">
                                         <tr>
@@ -55,13 +55,19 @@
                                                 #SL
                                             </th>
                                             <th scope="col" class="px-6 py-3">
+                                                Status
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
                                                 News Title
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                News Image
+                                                News Description
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                Image Des
+                                                News Category
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Image
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Action
@@ -69,40 +75,47 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @php
+                                            $num = 1;
+                                        @endphp
+                                        @foreach ($news as $item)
                                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                01
+                                                {{$num++}}
                                             </th>
-                                            <td class="px-6 py-4">
-                                                Silver
+                                            <td class="px-6 py-4 ">
+                                                @if ($item->status == 'active')
+                                                <p class="chips bg-green-500">{{ $item->status }}</p>
+                                                @elseif ($item->status == 'inactive')
+                                                <p class="chips bg-red-500">{{ $item->status }}</p>
+                                                @else
+                                                <p class="chips bg-yellow-200">{{ $item->status }}</p>
+                                                @endif
                                             </td>
                                             <td class="px-6 py-4">
-                                                Laptop
+                                               {{$item->title}}
                                             </td>
                                             <td class="px-6 py-4">
-                                                $2999
+                                                {{$item->description}}
                                             </td>
                                             <td class="px-6 py-4">
-                                                Asdf
+                                                {{$item->category->category_name}}
+                                            </td>
+                                            <td class="px-6 py-4">
+                                                <a class="cursor-zoom" href="{{ asset($item->image) }}"><img
+                                                        src="{{ asset($item->image) }}" class="w-60 object-contain"
+                                                        alt=" {{ $item->title }} image"></a>
+                                            </td>
+
+                                            <td class="px-6 py-4">
+                                                <a href="{{route('news.edit', ['id' => $item->news_id])}}"class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit
+                                                </a>
+                                                <a href="{{route('news.delete', ['id' => $item->news_id])}}"class="mt-1 inline-block focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete
+                                                </a>
                                             </td>
                                         </tr>
-                                        <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                01
-                                            </th>
-                                            <td class="px-6 py-4">
-                                                Silver
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                Laptop
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                $2999
-                                            </td>
-                                            <td class="px-6 py-4">
-                                                Asdf
-                                            </td>
-                                        </tr>
+                                        @endforeach
+
                                     </tbody>
                                 </table>
                             </div>
@@ -114,12 +127,15 @@
                                 <a href="{{route('category.add')}}"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Category</button></a>
                             </div>
                             {{--Category table--}}
-                            <div class="relative overflow-x-auto">
+                            <div class="relative ">
                                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400 border">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border">
                                         <tr>
                                             <th scope="col" class="px-6 py-3">
                                                 #SL
+                                            </th>
+                                            <th scope="col" class="px-6 py-3">
+                                                Status
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Category Name
@@ -139,12 +155,23 @@
                                                 {{$num++}}
                                             </th>
                                             <td class="px-6 py-4">
+                                                @if ($item->status == 'active')
+                                                <p class="chips bg-green-500">{{$item->status}}</p>
+                                                @elseif ($item->status == 'inactive')
+                                                <p class="chips bg-red-500">{{$item->status}}</p>
+                                                @else
+                                                <p class="chips bg-yellow-200">{{$item->status}}</p>
+                                                @endif
+                                            </td>
+                                            <td class="px-6 py-4">
                                                 {{$item->category_name}}
                                             </td>
                                             <td class="px-6 py-4">
-                                                <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
+                                                <a href="{{route('category.edit',['id'=> $item->category_id])}}">
+                                                    <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
+                                                </a>
                                                 <a href="{{route('category.delete',['id'=> $item->category_id])}}">
-                                                    <button type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
+                                                    <button type="button" onclick="return confirm('Do you want to delete ?')" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete</button>
                                                 </a>
                                             </td>
                                         </tr>
@@ -159,4 +186,15 @@
             </div>
         </div>
     </div>
+    @push('datatable')
+        <script>
+            $(function() {
+                $('table').DataTable({
+                        responsive: true
+                    })
+                    .columns.adjust()
+                    .responsive.recalc();
+            })
+        </script>
+    @endpush
 </x-app-layout>

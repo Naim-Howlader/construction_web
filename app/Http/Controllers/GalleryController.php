@@ -18,11 +18,11 @@ class GalleryController extends Controller
     }
     public function insert(Request $request)
     {
-        // $request->validate([
-        //     'title' => 'required',
-        //     'image' => 'required|mimes:jpeg,png,jpg,',
-        //     'category' => 'required'
-        // ]);
+         $request->validate([
+             'title' => 'required',
+             'image' => 'required|mimes:jpeg,png,jpg,',
+             'category' => 'required'
+         ]);
         $image = $request->file('image')->getClientOriginalName();
         $destination = "uploads/images/";
 
@@ -38,7 +38,7 @@ class GalleryController extends Controller
         $gallery = Gallery::with('category')->get();
         $category = Category::get();
         $data = compact('gallery', 'category');
-        session()->flash('success', 'Gallery has been created');
+        session()->flash('success', 'Gallery created successfully');
         return redirect()->route('project');
     }
 
@@ -68,9 +68,9 @@ class GalleryController extends Controller
 
     }
     public function update($id, Request $request){
-
-
-
+        $request->validate([
+            'title' => 'required',
+        ]);
         $gallery = Gallery::find($id);
         $gallery->title = $request['title'];
         $gallery->category_id = $request['category'];
@@ -91,6 +91,7 @@ class GalleryController extends Controller
 
 
         }
+        session()->flash('success', 'Gallery updated successfully');
         $gallery->update();
         return redirect('project');
     }
