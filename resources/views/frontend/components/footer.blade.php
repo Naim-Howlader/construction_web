@@ -8,6 +8,7 @@
 <script src="{{ asset('js/isotope.pkgd.min.js') }}"></script>
 <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 @stack('home-page-js')
+@stack('mobile-nav-js')
 <script src="{{ asset('js/script.js') }}"></script>
 </body>
 

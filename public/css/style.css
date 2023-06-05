@@ -1,7 +1,75 @@
 /* -------------------------------------------------------------------------- */
 /*                                 custom css                                 */
 /* -------------------------------------------------------------------------- */
+/* mobile nav css  */
+.mobile-nav-area {
+    clip-path: circle(3.6% at 93.3% 9.3%);
+}
+.mobile-nav-area.hide {
+    animation: mobilenavhide;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+}
+.mobile-nav-area ul {
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.mobile-nav-area.show {
+    animation: mobilenavshow;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-duration: 0.3s;
+}
+@keyframes mobilenavshow {
+    0% {
+        clip-path: circle(3.6% at 93.3% 9.3%);
+    }
+    20% {
+        clip-path: circle(25.5% at 95% 9%);
+    }
+    40% {
+        clip-path: circle(50.5% at 95% 9%);
+    }
+    60% {
+        clip-path: circle(80.7% at 95% 9%);
+    }
+    80% {
+        clip-path: circle(106.1% at 95% 9%);
+    }
+    100% {
+        clip-path: circle(131.4% at 95% 9%);
+    }
+}
+@keyframes mobilenavhide {
+    100% {
+        clip-path: circle(3.6% at 93.3% 9.3%);
+    }
+    80% {
+        clip-path: circle(25.5% at 95% 9%);
+    }
+    60% {
+        clip-path: circle(50.5% at 95% 9%);
+    }
+    40% {
+        clip-path: circle(80.7% at 95% 9%);
+    }
+    20% {
+        clip-path: circle(106.1% at 95% 9%);
+    }
+    0% {
+        clip-path: circle(131.4% at 95% 9%);
+    }
+}
 
+.mobile-nav-area.show ul {
+    opacity: 1;
+    visibility: visible;
+}
+/* mobile nav css  */
 /* ------------------------------ water effect ------------------------------ */
 .water-effect {
     position: relative;

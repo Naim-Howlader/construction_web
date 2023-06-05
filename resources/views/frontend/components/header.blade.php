@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
     {{-- csrf token  --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- favicon --}}
+    <link rel="icon" href="{{ asset('image/logo.png') }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
     {{-- ion icons  --}}

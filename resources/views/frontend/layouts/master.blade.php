@@ -1,4 +1,5 @@
 @include('frontend.components.header')
+@include('frontend.components.mobile-nav')
 @include('frontend.components.navbar')
 @yield('main')
 @include('frontend.components.bottom')

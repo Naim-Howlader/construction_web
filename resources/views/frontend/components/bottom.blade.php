@@ -7,7 +7,7 @@
                 class="title w-full relative before:absolute before:conent-[''] before:h-full before:w-1 before:bg-primary before:left-0 before:top-0">
                 <h2 class="text-md font-raleway font-bold text-white uppercase ml-5">About US</h2>
             </div>
-            <img src="{{ env('APP_LOGO') }}" alt="" class="my-8">
+            <img src="{{ asset('image/logo.png') }}" alt="" class="my-8 invert w-[200px]">
             <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                 inci
                 done idunt utp
@@ -70,7 +70,12 @@
 <footer class="bg-primary px-4">
     <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row items-center py-4 space-y-5 md:space-y-0">
         <div class="basis-full md:basis-[40%] text-center md:text-left">
-            <p class="text-sm">Copyright © {{ date('Y') }} Developed by someone</p>
+            <p class="text-sm">Copyright © {{ date('Y') }} Developed by <span><a
+                        href="https://www.linkedin.com/in/nurul-komor"
+                        class="hover:text-white font-medium duration-150">Nurul
+                        Komor</a> & <a href="https://www.facebook.com/profile.php?id=100016277460214"
+                        class="hover:text-white font-medium duration-150">Naim
+                        Hawlader</a></span></p>
         </div>
         <div class="text-sm basis-full md:basis-[60%]">
             <ul class="flex md:justify-end justify-center gap-3">

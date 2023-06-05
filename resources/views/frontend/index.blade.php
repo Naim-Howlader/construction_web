@@ -126,7 +126,7 @@
                     <div class="accordion">
                         <h2 id="accordion-collapse-heading-2">
                             <button type="button"
-                                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border  border-gray-300 "
+                                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border  border-gray-200 rounded-t"
                                 data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
                                 aria-controls="accordion-collapse-body-2">
                                 <span class="uppercase font-heading font-bold text-md">customer service</span>
@@ -141,7 +141,7 @@
                         </h2>
                         <div id="custom-accordion-collapse-body-2" class="hidden"
                             aria-labelledby="accordion-collapse-heading-2">
-                            <div class="p-5 border  border-gray-200 dark:border-gray-700">
+                            <div class="p-5 border  border-gray-200 rounded-b">
                                 <p class="mb-2 text-gray-500 dark:text-gray-400">Anim pariatur cliche reprehenderit, enim
                                     eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
                                     cupidata</p>
@@ -151,7 +151,7 @@
                     <div class="accordion">
                         <h2 id="accordion-collapse-heading-3">
                             <button type="button"
-                                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-300 "
+                                class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 rounded-t"
                                 data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
                                 aria-controls="accordion-collapse-body-3">
                                 <span class="uppercase font-heading font-bold text-md">intigrity</span>
@@ -166,7 +166,7 @@
                         </h2>
                         <div id="custom-accordion-collapse-body-3" class="hidden"
                             aria-labelledby="accordion-collapse-heading-3">
-                            <div class="p-5 border border-t-0 border-gray-200 dark:border-gray-700">
+                            <div class="p-5 border border-t-0 border-gray-200 rounded-b">
                                 <p class="mb-2 text-gray-500 dark:text-gray-400">Anim pariatur cliche reprehenderit, enim
                                     eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
                                     cupidata</p>
