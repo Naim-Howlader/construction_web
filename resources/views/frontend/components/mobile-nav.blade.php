@@ -8,7 +8,7 @@
     </div>
     <div class="fixed top-0 left-0 min-h-screen w-full  bg-slate-700 mobile-nav-area ">
         <div class="relative  z-2">
-            <div class="absolute right-9 top-8 z-5">
+            <div class="absolute left-[80%] top-[24px] z-5">
                 <ion-icon name="menu-outline" class="text-[30px] text-white cursor-pointer p-4 z-5 inline-block "
                     id="mobile-nav-btn">
                 </ion-icon>
