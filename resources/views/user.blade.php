@@ -22,62 +22,41 @@
                                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                                             <tr>
                                                 <th scope="col" class="px-6 py-3">
-                                                    Product name
+                                                   #SL
                                                 </th>
                                                 <th scope="col" class="px-6 py-3">
-                                                    Color
+                                                    User Name
                                                 </th>
                                                 <th scope="col" class="px-6 py-3">
-                                                    Category
+                                                    User Email
                                                 </th>
                                                 <th scope="col" class="px-6 py-3">
-                                                    Price
+                                                    Action
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @php
+                                                $num = 1;
+                                            @endphp
+                                            @foreach ($users as $item)
                                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                                 <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    Apple MacBook Pro 17"
+                                                    {{$num++}}
                                                 </th>
                                                 <td class="px-6 py-4">
-                                                    Silver
+                                                    {{$item->name}}
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    Laptop
+                                                    {{$item->email}}
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    $2999
+                                                    <a onclick="return confirm('do your want do delete?')" href="{{route('user.delete', ['id' => $item->id])}}"class="mt-1 inline-block focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete
+                                                    </a>
                                                 </td>
                                             </tr>
-                                            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    Microsoft Surface Pro
-                                                </th>
-                                                <td class="px-6 py-4">
-                                                    White
-                                                </td>
-                                                <td class="px-6 py-4">
-                                                    Laptop PC
-                                                </td>
-                                                <td class="px-6 py-4">
-                                                    $1999
-                                                </td>
-                                            </tr>
-                                            <tr class="bg-white dark:bg-gray-800">
-                                                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                                    Magic Mouse 2
-                                                </th>
-                                                <td class="px-6 py-4">
-                                                    Black
-                                                </td>
-                                                <td class="px-6 py-4">
-                                                    Accessories
-                                                </td>
-                                                <td class="px-6 py-4">
-                                                    $99
-                                                </td>
-                                            </tr>
+                                            @endforeach
+
                                         </tbody>
                                     </table>
                                 </div>

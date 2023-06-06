@@ -87,7 +87,8 @@ Route::middleware('auth')->group(function () {
 
     //---------User Route---------
         Route::get('/users', [UserController::class, 'usersView'])->name('users');
-         Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
-         Route::post('register', [RegisteredUserController::class, 'store']);
+        Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+        Route::post('register', [RegisteredUserController::class, 'store']);
+        Route::get('/user-delete/{id}', [UserController::class, 'destroy'])->name('user.delete');
 
 });
