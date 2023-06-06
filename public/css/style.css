@@ -1,9 +1,22 @@
 /* -------------------------------------------------------------------------- */
 /*                                 custom css                                 */
 /* -------------------------------------------------------------------------- */
+
+::-moz-selection {
+    /* Code for Firefox */
+    background: red;
+    color: white;
+}
+
+::selection {
+    background: red;
+    color: white;
+}
+
 /* mobile nav css  */
 .mobile-nav-area {
-    clip-path: circle(3.6% at 93.3% 9.3%);
+    clip-path: circle(28px at 90% 53px);
+    overflow: hidden;
 }
 .mobile-nav-area.hide {
     animation: mobilenavhide;
@@ -26,7 +39,7 @@
 }
 @keyframes mobilenavshow {
     0% {
-        clip-path: circle(3.6% at 93.3% 9.3%);
+        clip-path: circle(3.6% at 93.5% 9.1%);
     }
     20% {
         clip-path: circle(25.5% at 95% 9%);
@@ -46,7 +59,7 @@
 }
 @keyframes mobilenavhide {
     100% {
-        clip-path: circle(3.6% at 93.3% 9.3%);
+        clip-path: circle(3.6% at 93.5% 9.1%);
     }
     80% {
         clip-path: circle(25.5% at 95% 9%);

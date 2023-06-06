@@ -27,7 +27,7 @@ class NewsController extends Controller
         $request->image->move(public_path($destination), $image);
         $news = new News;
         $news->title = $request['title'];
-        $news->description = $request['description'];
+        $news->description = nl2br($request['description']);
         $news->category_id = $request['category'];
         $news->image = $destination . $image;
         if($request->status == 'on'){
@@ -67,7 +67,7 @@ class NewsController extends Controller
         ]);
         $news = News::find($id);
         $news->title = $request['title'];
-        $news->description = $request['description'];
+        $news->description = nl2br($request['description']);
         $news->category_id = $request['category'];
         if($request->hasFile('image')){
             $destination = 'uploads/images/'.$news->image;

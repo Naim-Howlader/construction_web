@@ -60,14 +60,15 @@
                                             <th scope="col" class="px-6 py-3">
                                                 News Title
                                             </th>
-                                            <th scope="col" class="px-6 py-3">
-                                                News Description
-                                            </th>
+
                                             <th scope="col" class="px-6 py-3">
                                                 News Category
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Image
+                                            </th>
+                                            <th scope="col" class="px-6 py-3 min-w-[300px]">
+                                                News Description
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Action
@@ -95,20 +96,20 @@
                                             <td class="px-6 py-4">
                                                {{$item->title}}
                                             </td>
-                                            <td class="px-6 py-4">
-                                                {{$item->description}}
-                                            </td>
+
                                             <td class="px-6 py-4">
                                                 {{$item->category->category_name}}
                                             </td>
                                             <td class="px-6 py-4">
                                                 <a class="cursor-zoom" href="{{ asset($item->image) }}"><img
-                                                        src="{{ asset($item->image) }}" class="w-60 object-contain"
+                                                        src="{{ asset($item->image) }}" class="h-60 w-full object-contain"
                                                         alt=" {{ $item->title }} image"></a>
                                             </td>
-
+                                            <td class="px-6 py-4 ">
+                                                {!! $item->description !!}
+                                            </td>
                                             <td class="px-6 py-4">
-                                                <a onclick="return confirm('do your want do delete?')" href="{{route('news.edit', ['id' => $item->news_id])}}"class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit
+                                                <a href="{{route('news.edit', ['id' => $item->news_id])}}"class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit
                                                 </a>
                                                 <a href="{{route('news.delete', ['id' => $item->news_id])}}"class="mt-1 inline-block focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Delete
                                                 </a>

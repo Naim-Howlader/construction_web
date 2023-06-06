@@ -280,7 +280,7 @@
                 </div>
                 <div class="content-grp-2 lg:col-span-4 pb-10 lg:pb-0">
                     <img loading="lazy" src="{{ asset('image/service-center.jpg') }}" alt=""
-                        class="pt-14 max-w-[350px] mx-auto lg:pt-0 ">
+                        class="pt-14 w-full max-w-[350px] mx-auto lg:pt-0 ">
                 </div>
                 <div class="content-grp-3 lg:col-span-4 space-y-12 pb-20">
                     <div class="single-item flex space-x-8">
@@ -386,7 +386,7 @@
             @endforeach
         </div>
         <div class="recent-button-section pt-10 pb-14 mx-auto w-fit block">
-            <a href="#"
+            <a href="{{ route('common.projects') }}"
                 class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300  rounded-md text-sm px-5 py-4 mr-2 mb-2 uppercase font-bold">View
                 all
                 projects</a>
@@ -497,23 +497,21 @@
             </div>
             <div class="news-image-section space-y-10 pb-14 md:grid md:grid-cols-12 md:space-y-0 md:gap-x-5 md:gap-y-10 ">
 
-                @for ($i = 0; $i < 3; $i++)
+                @foreach ($news as $item)
                     <div class="single-item md:col-span-6 lg:col-span-4 group overflow-hidden">
                         <a href="">
-                            <img loading="lazy" src="{{ asset('image/news2.jpg') }}"
-                                class="object-cover opacity-[0.7] group-hover:scale-110 group-hover:opacity-100  duration-200"
+                            <img loading="lazy" src="{{ asset($item->image) }}"
+                                class="object-cover opacity-[0.7] group-hover:scale-110 group-hover:opacity-100  duration-200 h-[250px]"
                                 alt="" srcset="">
                             <h2
                                 class="pt-5 pb-1 text-lg font-semibold font-raleway group-hover:text-primary transition-all duration-300 text-limit">
-                                WE JUST COMPLETES $17.6 MILLION
-                                MEDICAL CLINIC IN MID-MISSOURI
-                                MEDICAL CLINIC IN MID-MISSOURI
+                                {{ $item->title }}
                             </h2>
                             <h2 class="font-raleway text-sm text-gray-600 opacity-100 duration-200 group-hover:opacity-0">
-                                JULY 20, 2017</h2>
+                                {{ date('M d,Y', strtotime($item->created_at)) }}</h2>
                         </a>
                     </div>
-                @endfor
+                @endforeach
 
 
             </div>
