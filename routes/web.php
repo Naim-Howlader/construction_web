@@ -27,6 +27,8 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 /* -------------------------------------------------------------------------- */
 Route::get('/', [CommonController::class, 'index'])->name('home');
 Route::get('/projects', [CommonController::class, 'projects'])->name('common.projects');
+Route::get('/recent-project/{id}', [CommonController::class, 'news'])->name('common.news');
+Route::get('/all-recent-project', [CommonController::class, 'allNews'])->name('common.all-news');
 
 
 

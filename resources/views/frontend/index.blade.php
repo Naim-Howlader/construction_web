@@ -499,7 +499,7 @@
 
                 @foreach ($news as $item)
                     <div class="single-item md:col-span-6 lg:col-span-4 group overflow-hidden">
-                        <a href="">
+                        <a href="{{ route('common.news', ['id' => $item->news_id]) }}">
                             <img loading="lazy" src="{{ asset($item->image) }}"
                                 class="object-cover opacity-[0.7] group-hover:scale-110 group-hover:opacity-100  duration-200 h-[250px]"
                                 alt="" srcset="">

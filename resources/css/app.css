@@ -14,25 +14,38 @@
     .font-heading {
         font-family: "Barlow", "Raleway";
     }
+
     .font-raleway {
         /* font-family: "Montserrat", sans-serif; */
         font-family: "Raleway", sans-serif;
         @apply font-[400];
     }
+
     .font-body {
         /* font-family: "Times New Roman", sans-serif; */
         font-family: "Geologica", sans-serif;
         @apply font-[200];
     }
+
     .text-limit {
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 2; /* Change the number to set a different maximum number of lines */
+        -webkit-line-clamp: 2;
+        /* Change the number to set a different maximum number of lines */
+        -webkit-box-orient: vertical;
+    }
+
+    .text-limit-4 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        /* Change the number to set a different maximum number of lines */
         -webkit-box-orient: vertical;
     }
 
     .chips {
-        @apply relative inline-block select-none whitespace-nowrap rounded-lg  py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white;
+        @apply relative inline-block select-none whitespace-nowrap rounded-lg py-2 px-3.5 align-baseline font-sans text-xs font-bold uppercase leading-none text-white;
     }
 }

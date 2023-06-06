@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\News;
 use App\Models\Gallery;
 use App\Models\Category;
+use App\Models\NewsCategory;
 use Illuminate\Http\Request;
 
 class CommonController extends Controller
@@ -16,9 +17,22 @@ class CommonController extends Controller
         $news = News::where('status', 'active')->latest()->take(3)->get();
         return view('frontend.index', ['categories' => $categories, 'galleries' => $galleries, 'news' => $news]);
     }
-    public function news()
+    public function news($id)
     {
-        return view('frontend.news');
+        $news = News::find($id);
+        $news2 = News::where('status', 'active')->latest()->take(3)->get();
+        $newscat = NewsCategory::where('status', 'active')->latest()->get();
+        $title = "News";
+        $data = compact('title','news','news2', 'newscat');
+        return view('frontend.news')->with($data);
+    }
+    public function allNews(){
+        $news = News::where('status', 'active')->latest()->paginate(3);
+        $news2 = News::where('status', 'active')->latest()->take(3)->get();
+        $newscat = NewsCategory::where('status', 'active')->latest()->get();
+        $title = "News";
+        $data = compact('title','news','news2', 'newscat');
+        return view('frontend.all-news')->with($data);
     }
     public function projects()
     {

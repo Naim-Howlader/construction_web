@@ -27,6 +27,9 @@
                 <li class="hover:text-primary duration-150"><a href="/about">About</a></li>
                 <li class="hover:text-primary {{ Route::is('common.projects') ? 'text-primary' : '' }} duration-150"><a
                         href="{{ route('common.projects') }}">Projects</a></li>
+
+                <li class="hover:text-primary {{ Route::is('common.all-news') ? 'text-primary' : '' }} duration-150"><a
+                        href="{{ route('common.all-news') }}">News</a></li>
                 <li class="hover:text-primary duration-150"><a href="#">Home</a></li>
                 <li class="hover:text-primary duration-150"><a href="#">Home</a></li>
                 <li class="hover:text-primary duration-150"><a href="#">Home</a></li>
