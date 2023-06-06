@@ -40,7 +40,7 @@
             <div class=" overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="">
                     <div class="main-section grid grid-cols-12 p-6 text-gray-900 space-x-5">
-                        <div class="col-span-6 bg-white px-5 pt-5 pb-5 rounded-md">
+                        <div class="col-span-12 lg:col-span-6 bg-white px-5 pt-5 pb-5 rounded-md">
                             <div class="btn flex justify-between">
                                 <h2 class="text-2xl pb-5">Image Gallery Table</h2>
                                 <div class="">
@@ -109,7 +109,7 @@
                                                             alt=" {{ $item->title }} image"></a>
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    <a href="{{route('gallery.edit', ['id'=>$item->gallery_id])}}">
+                                                    <a href="{{ route('gallery.edit', ['id' => $item->gallery_id]) }}">
                                                         <button type="button"
                                                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</button>
                                                     </a>
@@ -127,7 +127,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="col-span-6 bg-white px-5 pt-5 pb-5 rounded-md">
+                        <div class="col-span-12 lg:col-span-6 bg-white px-5 pt-5 pb-5 rounded-md">
                             <div class="btn flex justify-between">
                                 <h2 class="text-2xl pb-5">Category Table</h2>
                                 <div class="">
