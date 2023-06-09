@@ -517,7 +517,7 @@
             </div>
             <div class="news-btn-section flex justify-center pb-14">
 
-                <a href="#"
+                <a href="{{ route('common.all-news') }}"
                     class=" font-raleway focus:outline-none text-white bg-primary hover:bg-black duration-150 focus:ring-2 ring-offset-2 focus:ring-red-300 font-bold rounded-md text-sm px-5 py-4 mr-2 mb-2 uppercase">View
                     all
                     posts</a>
