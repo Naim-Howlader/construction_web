@@ -31,7 +31,7 @@
                     class="grid-item {{ str_replace(' ', '_', $gallery->category->category_name) }} w-full sm:w-6/12 lg:w-4/12 group">
                     <div class="relative overflow-hidden">
                         <img loading="lazy" src="{{ asset($gallery->image) }}" alt=""
-                            class="h-full w-full object-cover  group-hover:scale-125 transition-all duration-700 ">
+                            class="h-[380px] w-full object-cover   group-hover:scale-125 transition-all duration-700 ">
                         <div
                             class="absolute h-full w-full bg-black/60 group-hover:bg-opacity-[0.4]  bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-300">
                             <a href="{{ asset($gallery->image) }}" class="show-image">

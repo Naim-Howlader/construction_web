@@ -36,10 +36,10 @@
                     <h2 class="text-3xl pb-5 font-bold">{{ $item->title }}</h2>
 
 
-                    <p class="pb-10 text-limit-4">{!! $item->description !!}</p>
+                    <p class=" text-limit-4">{!! $item->description !!}</p>
                     <div class="mb-10">
                         <a href="{{ route('common.news', ['id' => $item->news_id]) }}"
-                            class="text-white uppercase bg-primary hover:bg-black focus:ring-4 focus:ring-red-300 font-medium  text-sm px-5 py-2.5 mr-2 mb-2 dark:primary dark:hover:primary focus:outline-none dark:focus:ring-primary">Continue
+                            class="text-white uppercase bg-primary hover:bg-black focus:ring-4 focus:ring-red-300 font-medium  text-sm px-5 py-2.5 mr-2 mb-2 dark:primary dark:hover:primary focus:outline-none dark:focus:ring-primary duration-150">Continue
                             reading</a>
                     </div>
 
@@ -59,11 +59,12 @@
                     <a href="{{ route('common.news', ['id' => $item->news_id]) }}">
                         <div class="single-post flex justify-center gap-x-4 pb-5">
                             <img src="{{ asset($item->image) }}" alt="" srcset="" class="w-32">
-                            <h2 class="font-normal hover:text-primary hover:cursor-pointer transition-all duration-200">
+                            <h2
+                                class="font-normal hover:text-primary hover:cursor-pointer transition-all duration-200 text-limit">
                                 {{ $item->title }}</h2>
                         </div>
                     </a>
-                    <div class="w-full h-px bg-gray-400 mb-10"></div>
+                    <div class="w-full h-px bg-gray-200 mb-10"></div>
                 @endforeach
 
             </div>
@@ -74,14 +75,15 @@
                 </div>
                 @foreach ($newscat as $item)
                     <div class="single-post ">
-                        <h2 class="pb-2 text-medium hover:text-primary hover:cursor-pointer transition-all duration-200">
+                        <h2
+                            class="py-2 border-b border-gray-200 text-medium hover:text-primary hover:cursor-pointer transition-all duration-200">
                             {{ $item->category_name }}</h2>
-                        <div class="w-full h-px bg-gray-400 mb-5"></div>
+
                     </div>
                 @endforeach
 
             </div>
-            <div class="archives pt-10">
+            {{-- <div class="archives pt-10">
                 <div class="flex gap-x-5 pt-5 pb-5">
                     <div class="w-1 h-7 bg-primary"></div>
                     <h2 class="text-xl font-semibold">Archive</h2>
@@ -106,7 +108,7 @@
                     <h2 class="pb-2  text-medium">Mey 2023</h2>
                     <div class="w-full h-px bg-gray-400 mb-5"></div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 @endsection
