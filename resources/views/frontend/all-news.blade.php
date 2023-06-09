@@ -39,7 +39,7 @@
                     <p class="pb-10 text-limit-4">{!! $item->description !!}</p>
                     <div class="mb-10">
                         <a href="{{ route('common.news', ['id' => $item->news_id]) }}"
-                            class="text-white uppercase bg-primary hover:bg-primary focus:ring-4 focus:ring-red-300 font-medium  text-sm px-5 py-2.5 mr-2 mb-2 dark:primary dark:hover:primary focus:outline-none dark:focus:ring-primary">Continue
+                            class="text-white uppercase bg-primary hover:bg-black focus:ring-4 focus:ring-red-300 font-medium  text-sm px-5 py-2.5 mr-2 mb-2 dark:primary dark:hover:primary focus:outline-none dark:focus:ring-primary">Continue
                             reading</a>
                     </div>
 

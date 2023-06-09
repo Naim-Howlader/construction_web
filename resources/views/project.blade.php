@@ -39,7 +39,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class=" overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="">
-                    <div class="main-section grid grid-cols-12 p-6 text-gray-900 space-x-5">
+                    <div class="main-section grid grid-cols-12 gap-5 p-3 text-gray-900 ">
                         <div class="col-span-12 lg:col-span-6 bg-white px-5 pt-5 pb-5 rounded-md">
                             <div class="btn flex justify-between">
                                 <h2 class="text-2xl pb-5">Image Gallery Table</h2>
@@ -104,9 +104,12 @@
                                                     {{ $item->category->category_name }}
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    <a class="cursor-zoom" href="{{ asset($item->image) }}"><img
-                                                            src="{{ asset($item->image) }}" class="w-60 object-contain"
-                                                            alt=" {{ $item->title }} image"></a>
+                                                    <div>
+                                                        <a class="cursor-zoom" href="{{ asset($item->image) }}"><img
+                                                                src="{{ asset($item->image) }}"
+                                                                class="w-60 object-contain"
+                                                                alt=" {{ $item->title }} image"></a>
+                                                    </div>
                                                 </td>
                                                 <td class="px-6 py-4">
                                                     <a href="{{ route('gallery.edit', ['id' => $item->gallery_id]) }}">

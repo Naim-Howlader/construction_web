@@ -79,11 +79,14 @@
         </div>
         <div class="text-sm basis-full md:basis-[60%]">
             <ul class="flex md:justify-end justify-center gap-3">
-                <li><a href="#" class="p-2 hover:text-white duration-75"> About</a> </li>
-                <li><a href="#" class="p-2 hover:text-white duration-75"> Our</a> </li>
-                <li><a href="#" class="p-2 hover:text-white duration-75"> people</a> </li>
-                <li><a href="#" class="p-2 hover:text-white duration-75"> Faq</a> </li>
-                <li><a href="#" class="p-2 hover:text-white duration-75"> Blog</a> </li>
+                <li class="hover:text-white {{ Route::is('home') ? 'text-white' : '' }} duration-150"><a
+                        href="{{ route('home') }}">Home</a></li>white
+                <li class="hover:text-white {{ Route::is('common.projects') ? 'text-white' : '' }} duration-150"><a
+                        href="{{ route('common.projects') }}">Projects</a></li>
+
+                <li class="hover:text-white {{ Route::is('common.all-news') ? 'text-white' : '' }} duration-150"><a
+                        href="{{ route('common.all-news') }}">News</a></li>
+
 
             </ul>
         </div>

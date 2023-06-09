@@ -9,18 +9,20 @@ use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
-    public function addNews(){
+    public function addNews()
+    {
         $categories = NewsCategory::get();
         $data = compact('categories');
         return view('add-news')->with($data);
     }
-    public function insert(Request $request){
-         $request->validate([
-             'title' => 'required',
-             'description' => 'required',
-             'image' => 'required',
-             'category' => 'required',
-         ]);
+    public function insert(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'image' => 'required',
+            'category' => 'required',
+        ]);
         $image = $request->file('image')->getClientOriginalName();
         $destination = "uploads/images/";
 
@@ -30,34 +32,38 @@ class NewsController extends Controller
         $news->description = nl2br($request['description']);
         $news->category_id = $request['category'];
         $news->image = $destination . $image;
-        if($request->status == 'on'){
+        if ($request->status == 'on') {
             $news->status = 'active';
-        };
+        }
+        ;
         $news->save();
         session()->flash('success', 'News created successfully');
         return redirect()->route('news');
 
     }
-    public function destroy($id){
+    public function destroy($id)
+    {
         $news = News::find($id);
-        if(empty($news)){
+        if (empty($news)) {
             return redirect()->route('news');
         }
         $news->delete();
         session()->flash('success', 'News removed successfully');
         return redirect()->route('news');
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $news = News::find($id);
-        if(empty($news)){
+        if (empty($news)) {
             return redirect()->route('news');
         }
         $categories = NewsCategory::get();
-        $url = url('/news/update-news') . '/' .$id;
-        $data = compact('news','categories', 'url');
+        $url = route('news.update', ['id' => $id]);
+        $data = compact('news', 'categories', 'url');
         return view('update-news')->with($data);
     }
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
 
         $request->validate([
             'title' => 'required',
@@ -69,9 +75,9 @@ class NewsController extends Controller
         $news->title = $request['title'];
         $news->description = nl2br($request['description']);
         $news->category_id = $request['category'];
-        if($request->hasFile('image')){
-            $destination = 'uploads/images/'.$news->image;
-            if(File::exists($destination)){
+        if ($request->hasFile('image')) {
+            $destination = 'uploads/images/' . $news->image;
+            if (File::exists($destination)) {
                 File::delete($destination);
             }
             $image = $request->file('image')->getClientOriginalName();
@@ -79,9 +85,9 @@ class NewsController extends Controller
             $request->image->move(public_path($destination), $image);
             $news->image = $destination . $image;
         }
-        if($request->status == 'on'){
+        if ($request->status == 'on') {
             $news->status = 'active';
-        }else{
+        } else {
             $news->status = 'inactive';
         }
         session()->flash('success', 'News updated successfully');

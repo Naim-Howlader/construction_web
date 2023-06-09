@@ -12,7 +12,7 @@ class CategoryController extends Controller
     public function index()
     {
         $title = "Add Category";
-        $url = url('/insert-category');
+        $url = route('insert-category');
         $btn = 'Submit';
         $data = compact('title', 'url', 'btn');
         return view('add-category')->with($data);
@@ -20,9 +20,9 @@ class CategoryController extends Controller
 
     public function insert(Request $request)
     {
-        // return $request->all();
+
         $request->validate([
-            'category_name' => 'required',
+            'category_name' => 'required|unique:categories',
         ]);
         $category = new Category;
         $category->category_name = $request['category_name'];
@@ -31,7 +31,7 @@ class CategoryController extends Controller
         }
         session()->flash('success', 'Category created successfully');
         $category->save();
-        return redirect()->route('project');
+        return redirect()->route('gallery.index');
     }
     public function projectView()
     {
@@ -45,16 +45,17 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->delete();
         session()->flash('success', 'Category removed successfully');
-        return redirect('project');
+        return redirect('gallery.index');
     }
     public function catEdit($id)
     {
+
         $category = Category::find($id);
         if (empty($category)) {
-            return redirect('project');
+            return redirect('gallery.index');
         } else {
             $title = "Update Category";
-            $url = url('/category-update') . '/' . $id;
+            $url = route('update-category', ['id' => $id]);
             $btn = 'Update';
             $data = compact('title', 'url', 'category', 'btn');
             return view('add-category')->with($data);
@@ -80,7 +81,7 @@ class CategoryController extends Controller
         }
         session()->flash('success', 'Category updated successfully');
         $category->save();
-        return redirect('project');
+        return redirect()->route('gallery.index');
     }
 
 

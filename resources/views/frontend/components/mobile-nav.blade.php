@@ -10,12 +10,17 @@
                         <button class="grt-mobile-button"><span class="line1"></span><span class="line2"></span><span
                                 class="line3"></span></button>
                         <ul class="grt-menu">
-                            <li class="active"><a href="">Home</a></li>
-                            <li><a href="">About</a></li>
-                            <li><a href="">Portfolio</a></li>
-                            <li><a href="">Blog</a></li>
+                            <li class="hover:text-primary {{ Route::is('home') ? 'active' : '' }} duration-150"><a
+                                    href="{{ route('home') }}">Home</a></li>
 
-                            <li><a href="">contact</a></li>
+                            <li
+                                class="hover:text-primary {{ Route::is('common.projects') ? 'active' : '' }} duration-150">
+                                <a href="{{ route('common.projects') }}">Projects</a></li>
+
+                            <li
+                                class="hover:text-primary {{ Route::is('common.all-news') ? 'active' : '' }} duration-150">
+                                <a href="{{ route('common.all-news') }}">News</a></li>
+
                         </ul>
                     </nav>
                 </div>

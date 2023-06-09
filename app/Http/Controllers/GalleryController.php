@@ -18,11 +18,11 @@ class GalleryController extends Controller
     }
     public function insert(Request $request)
     {
-         $request->validate([
-             'title' => 'required',
-             'image' => 'required|mimes:jpeg,png,jpg,',
-             'category' => 'required'
-         ]);
+        $request->validate([
+            'title' => 'required',
+            'image' => 'required|mimes:jpeg,png,jpg,',
+            'category' => 'required'
+        ]);
         $image = $request->file('image')->getClientOriginalName();
         $destination = "uploads/images/";
 
@@ -39,44 +39,41 @@ class GalleryController extends Controller
         $category = Category::get();
         $data = compact('gallery', 'category');
         session()->flash('success', 'Gallery created successfully');
-        return redirect()->route('project');
+        return redirect()->route('gallery.index');
     }
 
     public function destroy($id)
     {
         $gallery = Gallery::find($id);
-
-        if (Auth()->user() == null) {
-            return redirect('/project')->with('error', 'Unauthorized Page');
-        }
-
         //delete the gallery
         $gallery->delete();
         session()->flash('success', 'Gallery Removed Successfully!');
         //redirect to gallery page with success message
-        return redirect('/project');
+        return redirect()->route('gallery.index');
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $gallery = Gallery::find($id);
-        if(empty($gallery)){
+        if (empty($gallery)) {
             return view('project');
         }
         $url = url('/gallery/update-gallery') . '/' . $id;
         $category = Category::get();
-        $data = compact('gallery','category','url');
+        $data = compact('gallery', 'category', 'url');
         return view('update-gallery')->with($data);
 
     }
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         $request->validate([
             'title' => 'required',
         ]);
         $gallery = Gallery::find($id);
         $gallery->title = $request['title'];
         $gallery->category_id = $request['category'];
-        if($request->hasFile('image')){
-            $destination = 'uploads/images/'.$gallery->image;
-            if(File::exists($destination)){
+        if ($request->hasFile('image')) {
+            $destination = 'uploads/images/' . $gallery->image;
+            if (File::exists($destination)) {
                 File::delete($destination);
             }
             $image = $request->file('image')->getClientOriginalName();
@@ -93,7 +90,7 @@ class GalleryController extends Controller
         }
         session()->flash('success', 'Gallery updated successfully');
         $gallery->update();
-        return redirect('project');
+        return redirect()->route('gallery.index');
     }
 
 }
