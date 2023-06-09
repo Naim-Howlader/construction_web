@@ -75,7 +75,7 @@
                         class="hover:text-white font-medium duration-150">Nurul
                         Komor</a> & <a href="https://www.facebook.com/profile.php?id=100016277460214"
                         class="hover:text-white font-medium duration-150">Naim
-                        Hawlader</a></span></p>
+                        Howlader</a></span></p>
         </div>
         <div class="text-sm basis-full md:basis-[60%]">
             <ul class="flex md:justify-end justify-center gap-3">

@@ -28,7 +28,7 @@
                                 calendar_month
                             </span>
                         </span>
-                        <p class="text-base">Jan 14, 2023</p>
+                        <p class="text-base">{{ date('M d,Y', strtotime($item->created_at)) }}</p>
                     </div>
                 </div>
                 <div class="text">
@@ -36,7 +36,12 @@
                     <h2 class="text-3xl pb-5 font-bold">{{ $item->title }}</h2>
 
 
-                    <p class="pb-10 ">{!! $item->description !!}</p>
+                    <p class="pb-10 text-limit-4">{!! $item->description !!}</p>
+                    <div class="mb-10">
+                        <a href="{{ route('common.news', ['id' => $item->news_id]) }}"
+                            class="text-white uppercase bg-primary hover:bg-primary focus:ring-4 focus:ring-red-300 font-medium  text-sm px-5 py-2.5 mr-2 mb-2 dark:primary dark:hover:primary focus:outline-none dark:focus:ring-primary">Continue
+                            reading</a>
+                    </div>
 
                 </div>
             @endforeach
