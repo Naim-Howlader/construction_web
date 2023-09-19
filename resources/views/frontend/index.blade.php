@@ -2,51 +2,52 @@
 @section('main')
     {{-- hero section starts  --}}
     <section class="mb-4 owl-carousel" id="hero-section">
-        @for ($i = 0; $i < 3; $i++)
-            <div
-                class="item z-5 py-10 bg-[url('https://assets-us-01.kc-usercontent.com/fa776f1a-4d27-4a6b-ae1c-2ce928f9647d/9cd8ea0f-679b-4ed3-a238-3ee8a3c5ea98/construction-site-Cropped2.jpg')] bg-cover bg-center bg-no-repeat relative before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-black before:opacity-[0.4] before:z-0">
-                <div class="px-5 max-w-[1280px] mx-auto z-10 relative select-none ">
-                    <div class="flex flex-col items-center justify-center md:items-start uppercase min-h-screen">
-                        <a>
-                            <h6
-                                class="font-raleway font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
-                                Car Was and dealing service</h6>
-                        </a>
-                        <h1 class="text-4xl sm:text-6xl md:text-[80px] lg:text-[120px] font-black font-raleway md:px-10 text-[#ff0000] z-5 leading-[-1] "
-                            style="-webkit-text-stroke: 2px">
-                            Advanced
-                        </h1>
-                        <div
-                            class="water-effect text-center lg:text-end w-full text-4xl h-[20px] sm:text-6xl sm:h-[40px] md:h-[80px] md:text-[80px] lg:h-[120px] lg:text-[120px] font-black font-raleway  md:px-10 outline-2 outline-[#e74c3c] z-5">
-                            <h1 class="stroke-2 lg:w-full left-0 md:right-0">
-                                Construction
-                            </h1>
-                            <h1 class=" lg:w-full left-0 md:right-0">
-                                Construction
-                            </h1>
-                        </div>
-                        <a href="#" class="inline-block  mb-4 mt-8">
-                            <h6
-                                class="font-raleway font-bold text-white text-md w-full relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
-                                Our services</h6>
-                        </a>
-                        <div class="w-full text-center absolute bottom-10">
-                            <a href="https://www.youtube.com/watch?v=FQPlEnKav48&t=58s&pp=ygUSYmVzdCB3ZWIgZnJhbWV3b3Jr"
-                                class="play-video">
-                                <label
-                                    class="text-2xl text-white p-4 inline-flex items-center justify-center bg-primary rounded-full button">
-                                    <ion-icon name="play"></ion-icon>
+        @foreach ($sliders as $slider)
 
-                                    <span></span>
-                                    <span></span>
-                                </label>
-                            </a>
-                        </div>
-                    </div>
+        <div style="background-image: url('{{asset($slider->image)}}')"
+        class="item z-5 py-10  bg-cover bg-center bg-no-repeat relative before:absolute before:w-full before:h-full before:top-0 before:left-0 before:bg-black before:opacity-[0.4] before:z-0">
+        <div class="px-5 max-w-[1280px] mx-auto z-10 relative select-none ">
+            <div class="flex flex-col items-center justify-center md:items-start uppercase min-h-screen">
+                <a>
+                    <h6
+                        class="font-raleway font-bold text-white text-md w-full my-4  relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
+                       {{$slider->sub_title}}</h6>
+                </a>
+                <h1 class="text-4xl sm:text-6xl md:text-[80px] lg:text-[120px] font-black font-raleway md:px-10 text-[#ff0000] z-5 leading-[-1] "
+                    style="-webkit-text-stroke: 2px">
+                    Advanced
+                </h1>
+                <div
+                    class="water-effect text-center lg:text-end w-full text-4xl h-[20px] sm:text-6xl sm:h-[40px] md:h-[80px] md:text-[80px] lg:h-[120px] lg:text-[120px] font-black font-raleway  md:px-10 outline-2 outline-[#e74c3c] z-5">
+                    <h1 class="stroke-2 lg:w-full left-0 md:right-0">
+                        {{$slider->title}}
+                    </h1>
+                    <h1 class=" lg:w-full left-0 md:right-0">
+                        {{$slider->title}}
+                    </h1>
+                </div>
+                <a href="#" class="inline-block  mb-4 mt-8">
+                    <h6
+                        class="font-raleway font-bold text-white text-md w-full relative md:left-16 before:hidden md:before:inline-block before:absolute before:content-[''] before:-left-14 before:top-[45%] before:h-1 before:w-12 before:bg-primary ">
+                        Our services</h6>
+                </a>
+                <div class="w-full text-center absolute bottom-10 ">
+                    <a href="{{$slider->video_link}}"
+                        class="">
+                        <label
+                            class="text-2xl text-white p-4 inline-flex items-center justify-center bg-primary rounded-full button cursor-pointer">
+                            <ion-icon name="play"></ion-icon>
 
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </a>
                 </div>
             </div>
-        @endfor
+
+        </div>
+    </div>
+        @endforeach
     </section>
     {{-- hero section ends --}}
     <div class=" px-5 sm:px-20 md:px-14 max-w-[1280px] mx-auto lg:grid grid-cols-12 py-12" id="about">

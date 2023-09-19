@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\NewsCategoryController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 
 
@@ -104,5 +105,18 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
     Route::post('register', [RegisteredUserController::class, 'store']);
 
+
+    /**
+     * *Update code
+     */
+    //--------Slider Route-----------
+    Route::get('/slider', [SliderController::class, 'sliderView'])->name('slider');
+    Route::group(['prefix' => 'slider', 'as' => 'slider.'], function(){
+        Route::get('/add-slider', [SliderController::class, 'addSlider'])->name('add');
+        Route::post('/insert-slider', [SliderController::class, 'insertSlider'])->name('insert');
+        Route::get('/edit-slider/{id}', [SliderController::class, 'editSlider'])->name('edit');
+        Route::post('/update-slider/{id}', [SliderController::class, 'updateSlider'])->name('update');
+        Route::get('/delete-slider/{id}', [SliderController::class, 'deleteSlider'])->name('delete');
+    });
 
 });
