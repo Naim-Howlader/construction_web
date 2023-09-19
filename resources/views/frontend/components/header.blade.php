@@ -28,7 +28,9 @@
 
     {{-- mobile menu css  --}}
     <link rel="stylesheet" href="{{ asset('css/grt-responsive-menu.css') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-72351641.css') }}">
+    <script src="{{ asset('build/assets/app-e7c8c463.js') }}"></script>
     {{-- cusom css  --}}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>

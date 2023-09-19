@@ -15,11 +15,13 @@
 
                             <li
                                 class="hover:text-primary {{ Route::is('common.projects') ? 'active' : '' }} duration-150">
-                                <a href="{{ route('common.projects') }}">Projects</a></li>
+                                <a href="{{ route('common.projects') }}">Projects</a>
+                            </li>
 
                             <li
                                 class="hover:text-primary {{ Route::is('common.all-news') ? 'active' : '' }} duration-150">
-                                <a href="{{ route('common.all-news') }}">News</a></li>
+                                <a href="{{ route('common.all-news') }}">Readymix</a>
+                            </li>
 
                         </ul>
                     </nav>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('News') }}
+            {{ __('Readymix') }}
         </h2>
     </x-slot>
 
@@ -42,12 +42,12 @@
                 <div class="">
                     <div class="main-section grid grid-cols-12 space-x-5">
                         <div class="col-span-12 lg:col-span-6 bg-white px-5 pt-5 pb-5 rounded-md">
-                            {{-- News table --}}
+                            {{-- Readymix table --}}
                             <div class="flex justify-between">
-                                <h2 class="text-2xl pb-5">News Table</h2>
+                                <h2 class="text-2xl pb-5">Readymix Table</h2>
                                 <a href="{{ route('news.add') }}"><button type="button"
                                         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add
-                                        News</button></a>
+                                        Readymix</button></a>
                             </div>
                             <div class=" w-full  relative">
                                 <table class="  text-sm text-left text-gray-500 dark:text-gray-400 border  ">
@@ -61,17 +61,17 @@
                                                 Status
                                             </th>
                                             <th scope="col" class="px-6 py-3">
-                                                News Title
+                                                Readymix Title
                                             </th>
 
                                             <th scope="col" class="px-6 py-3">
-                                                News Category
+                                                Readymix Category
                                             </th>
                                             <th scope="col" class="px-6 py-3 ">
                                                 Image
                                             </th>
                                             <th scope="col" class="px-6 py-3 ">
-                                                News Description
+                                                Readymix Description
                                             </th>
                                             <th scope="col" class="px-6 py-3">
                                                 Action

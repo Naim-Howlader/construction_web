@@ -237,3 +237,24 @@
     border: 1px solid #cc0000;
 }
 /* ------------------------------ client-carousel ends ------------------------------ */
+
+/* -------------------------------- clip path start ------------------------------- */
+
+#clip-path {
+    position: relative;
+}
+#clip-path::after {
+    position: absolute;
+    width: 220%;
+    height: 140%;
+    content: "";
+    background-color: #fff;
+    right: 0;
+    top: -15px;
+    /* z-index: -1; */
+    clip-path: polygon(0 0, 100% 0%, 92% 100%, 0% 100%);
+}
+/* @media (max-width:) {
+
+} */
+/* -------------------------------- clip path  end ------------------------------- */

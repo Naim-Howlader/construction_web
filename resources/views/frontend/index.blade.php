@@ -53,15 +53,11 @@
         <div class="about-main lg:col-span-6 lg:pr-5 ">
             <h3 class="uppercase mt-3 text-lg text-gray-600 font-raleway">about us</h3>
             <h1 class="uppercase text-3xl font-extrabold mt-3 font-heading">we delivered landmark projects</h1>
-            <p class="mt-3 leading-7 text-gray-600 text-justify ">We are rethoric question ran over her cheek
-                When
-                she reached
-                the first hills
-                of the
-                Italic
-                Mountains, she had
-                a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the
-                subline of her own road, the Line Lane.</p>
+            <p class="mt-3 leading-7 text-gray-600 text-justify ">M/S. Noor Mohammad Enterprise is a leading and reputable
+                company specializing in the fields of contracting, ready-mix concrete production, construction transport,
+                and construction materials supply. With a rich history of excellence and a commitment to quality, the
+                company has established itself as a trusted partner in the construction and infrastructure development
+                sector.</p>
             <div class="icon-group mt-8">
                 <ul class="font-heading">
                     <div class="md:flex justify-around">
@@ -93,8 +89,12 @@
         </div>
         <div class="value lg:col-span-6 lg:pl-5">
             <h1 class="uppercase text-3xl font-extrabold mt-14 font-heading">Our values</h1>
-            <p class="mt-3 leading-7 text-gray-600 text-base">Minim Austin 3 wolf moon scenester aesthetic, umami odio
-                pariatur bitters. Pop-up occaecat taxidermy street art, tattooed beard literally.</p>
+            <p class="mt-3 leading-7 text-gray-600 text-base">At M/S. Noor Mohammad Enterprise, our core values underpin
+                everything we do:
+
+                We are dedicated to delivering excellence in every aspect of our services. From the materials we supply to
+                the projects we undertake, quality is our top priority.
+            </p>
             <div class="accordion-section pt-5 pb-20">
 
                 <div id="accordion-collapse" data-accordion="collapse" class="space-y-2">
@@ -104,7 +104,7 @@
                                 class="flex items-center justify-between w-full p-5 font-medium text-left  border text-black border-gray-200 rounded-t"
                                 data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
                                 aria-controls="accordion-collapse-body-1">
-                                <span class="uppercase font-heading font-bold font text-md">Safety</span>
+                                <span class="uppercase font-heading font-bold font text-md">Reliability</span>
                                 <svg data-accordion-icon
                                     class="w-6 h-6 duration-[0.3s] rotate-180 shrink-0 bg-primary rounded-sm text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -117,9 +117,9 @@
                         <div id="custom-accordion-collapse-body-1" class=""
                             aria-labelledby="accordion-collapse-heading-2">
                             <div class="p-5 border  border-gray-200 rounded-b">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Anim pariatur cliche reprehenderit, enim
-                                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidata</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">Clients can rely on us for consistent and
+                                    dependable services. Our track record speaks for itself, showcasing our ability to
+                                    deliver results no matter the challenges.</p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border  border-gray-200 rounded-t"
                                 data-accordion-target="#accordion-collapse-body-2" aria-expanded="false"
                                 aria-controls="accordion-collapse-body-2">
-                                <span class="uppercase font-heading font-bold text-md">customer service</span>
+                                <span class="uppercase font-heading font-bold text-md">Innovation</span>
                                 <svg data-accordion-icon
                                     class="w-6 h-6 duration-[0.3s] rotate-180 shrink-0 bg-black rounded-sm text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -142,9 +142,9 @@
                         <div id="custom-accordion-collapse-body-2" class="hidden"
                             aria-labelledby="accordion-collapse-heading-2">
                             <div class="p-5 border  border-gray-200 rounded-b">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Anim pariatur cliche reprehenderit, enim
-                                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidata</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">We stay updated with the latest industry
+                                    trends and technological advancements. This enables us to provide innovative solutions
+                                    that enhance project efficiency and sustainability.</p>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                                 class="flex items-center justify-between w-full p-5 font-medium text-left text-gray-500 border border-gray-200 rounded-t"
                                 data-accordion-target="#accordion-collapse-body-3" aria-expanded="false"
                                 aria-controls="accordion-collapse-body-3">
-                                <span class="uppercase font-heading font-bold text-md">intigrity</span>
+                                <span class="uppercase font-heading font-bold text-md">Collaboration</span>
                                 <svg data-accordion-icon
                                     class="w-6 h-6 duration-[0.3s] rotate-180 shrink-0 bg-black rounded-sm text-white"
                                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -167,9 +167,9 @@
                         <div id="custom-accordion-collapse-body-3" class="hidden"
                             aria-labelledby="accordion-collapse-heading-3">
                             <div class="p-5 border border-t-0 border-gray-200 rounded-b">
-                                <p class="mb-2 text-gray-500 dark:text-gray-400">Anim pariatur cliche reprehenderit, enim
-                                    eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non
-                                    cupidata</p>
+                                <p class="mb-2 text-gray-500 dark:text-gray-400">We value collaboration with our clients,
+                                    partners, and stakeholders. By working together, we can achieve remarkable results and
+                                    overcome complex challenges.</p>
 
                             </div>
                         </div>
@@ -241,12 +241,14 @@
                             <ion-icon name="business-outline" class="text-6xl text-primary"></ion-icon>
                         </div>
                         <div class="single-item-text">
-                            <h2 class="text-base font-bold font-raleway pb-1">HOME CONSTRUCTION</h2>
-                            <p class="text-[15px] text-gray-600 font-normal font-raleway">Lorem ipsum dolor sit amet
-                                consectetur
-                                adipiscing
-                                elit Integer
-                                adipiscing erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quod.</p>
+                            <h2 class="text-base font-bold font-raleway pb-1">Building Construction Contracting Services
+                            </h2>
+                            <p class="text-[15px] text-gray-600 font-normal font-raleway">M/S. Noor Mohammad Enterprise is
+                                renowned for its comprehensive contracting services, catering to a diverse range of
+                                construction projects. From residential and commercial developments to industrial complexes
+                                and infrastructure projects, our skilled team ensures that every project is executed with
+                                precision, adhering to strict timelines and quality standards.
+                                p>
                         </div>
                     </div>
                     <div class="single-item flex space-x-8">
@@ -254,29 +256,16 @@
                             <ion-icon name="settings-outline" class="text-6xl text-primary"></ion-icon>
                         </div>
                         <div class="single-item-text">
-                            <h2 class="text-base font-bold font-raleway pb-1">BUILDING REMODELS</h2>
-                            <p class="text-[15px] text-gray-600 font-normal font-raleway">Lorem ipsum dolor sit amet
-                                consectetur
-                                adipiscing
-                                elit Integer
-                                adipiscing erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quod.</p>
+                            <h2 class="text-base font-bold font-raleway pb-1">Ready-Mix Concrete Production</h2>
+                            <p class="text-[15px] text-gray-600 font-normal font-raleway">We take pride in our advanced
+                                ready-mix concrete production capabilities. Our state-of-the-art facilities and skilled
+                                technicians enable us to produce high-quality concrete mixes that meet the specific
+                                requirements of each project. Whether it's a small-scale construction or a large
+                                infrastructure endeavour, our ready-mix concrete contributes to the strength and durability
+                                of structures.</p>
                         </div>
                     </div>
-                    <div class="single-item flex space-x-8">
-                        <div class="single-item-icon">
-                            <span class="material-symbols-outlined text-6xl text-primary">
-                                design_services
-                            </span>
-                        </div>
-                        <div class="single-item-text">
-                            <h2 class="text-base font-bold font-raleway pb-1">INTERIOR DESIGN</h2>
-                            <p class="text-[15px] text-gray-600 font-normal font-raleway">Lorem ipsum dolor sit amet
-                                consectetur
-                                adipiscing
-                                elit Integer
-                                adipiscing erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quod.</p>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="content-grp-2 lg:col-span-4 pb-10 lg:pb-0">
                     <img loading="lazy" src="{{ asset('image/service-center.jpg') }}" alt=""
@@ -290,15 +279,30 @@
                             </span>
                         </div>
                         <div class="single-item-text">
-                            <h2 class="text-base font-bold font-raleway pb-1">HOME CONSTRUCTION</h2>
-                            <p class="text-[15px] text-gray-600 font-normal font-raleway">Lorem ipsum dolor sit amet
-                                consectetur
-                                adipiscing
-                                elit Integer
-                                adipiscing erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quod.</p>
+                            <h2 class="text-base font-bold font-raleway pb-1">Construction Materials Supply:</h2>
+                            <p class="text-[15px] text-gray-600 font-normal font-raleway">We understand the importance of
+                                sourcing quality construction materials. As a trusted supplier, we provide a wide range of
+                                construction materials, including aggregates, cement, sand, steel, and more. Our materials
+                                meet industry standards, contributing to the stability and longevity of the projects we
+                                support.</p>
                         </div>
                     </div>
                     <div class="single-item flex space-x-8">
+                        <div class="single-item-icon">
+                            <span class="material-symbols-outlined text-6xl text-primary">
+                                front_loader
+                            </span>
+                        </div>
+                        <div class="single-item-text">
+                            <h2 class="text-base font-bold font-raleway pb-1">Construction Transport</h2>
+                            <p class="text-[15px] text-gray-600 font-normal font-raleway">Efficient and reliable
+                                transportation is a crucial component of any construction project. M/S. Noor Mohammad
+                                Enterprise offers a fleet of well-maintained vehicles suitable for transporting construction
+                                materials and equipment. Our commitment to timely deliveries ensures that projects remain on
+                                schedule, contributing to overall project success.</p>
+                        </div>
+                    </div>
+                    {{-- <div class="single-item flex space-x-8">
                         <div class="single-item-icon">
                             <span class="material-symbols-outlined text-6xl text-primary">
                                 front_loader
@@ -311,12 +315,14 @@
                                 adipiscing
                                 elit Integer
                                 adipiscing erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quod.</p>
+                                backspaceZ
                         </div>
                     </div>
+
                     <div class="single-item flex space-x-8">
                         <div class="single-item-icon">
                             <span class="material-symbols-outlined text-6xl text-primary">
-                                engineering
+                             F   engineering
                             </span>
                         </div>
                         <div class="single-item-text">
@@ -327,7 +333,7 @@
                                 elit Integer
                                 adipiscing erat Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, quod.</p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
