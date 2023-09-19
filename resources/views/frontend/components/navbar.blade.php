@@ -1,4 +1,4 @@
-<div class="absolute top-0 left-0 w-full  bg-[#231c1c9e] text-white z-50 hidden md:block">
+<div class="absolute top-0 left-0 w-full  bg-[#231c1c9e] text-white z-50 hidden md:block overflow-hidden">
     <div
         class="hidden lg:flex justify-between px-5 sm:px-20 md:px-14 lg:px-20 text-sm text-thin border-b border-gray-600  ">
         <div class="flex justify-between py-2 gap-4">
@@ -15,9 +15,10 @@
     </div>
     <div class="flex justify-between items-center px-5 sm:px-20 md:px-14 lg:px-20 text-sm text-thin py-4"
         id="nav-sticky">
-        <div>
+        <div class="p-2 " id="clip-path">
             <a href="{{ route('home') }}">
-                <img src="{{ asset('image/logo.png') }}" class="h-[52px]" alt="">
+                <img style="max-height: 96px" src="{{ asset('image/logo.png') }}" class="h-[60px]  relative z-10 "
+                    alt="">
             </a>
         </div>
         <div>
@@ -29,7 +30,7 @@
                         href="{{ route('common.projects') }}">Projects</a></li>
 
                 <li class="hover:text-primary {{ Route::is('common.all-news') ? 'text-primary' : '' }} duration-150"><a
-                        href="{{ route('common.all-news') }}">News</a></li>
+                        href="{{ route('common.all-news') }}">Readymix</a></li>
 
 
             </ul>

@@ -19,7 +19,7 @@
                         {{ __('Gallery') }}
                     </x-nav-link>
                     <x-nav-link :href="route('news')" :active="request()->routeIs('news')">
-                        {{ __('News') }}
+                        {{ __('Readymix') }}
                     </x-nav-link>
                     <x-nav-link :href="route('slider')" :active="request()->routeIs('slider')">
                         {{ __('Slider') }}
@@ -103,9 +103,20 @@
             </div>
 
             <div class="mt-3 space-y-1">
+
+                <x-responsive-nav-link :href="route('gallery.index')" :active="request()->routeIs('gallery.index')">
+                    {{ __('Gallery') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('news')" :active="request()->routeIs('news')">
+                    {{ __('Readymix') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('users')" :active="request()->routeIs('users')">
+                    {{ __('Users') }}
+                </x-responsive-nav-link>
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
+
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
