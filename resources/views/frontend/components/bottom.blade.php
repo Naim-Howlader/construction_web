@@ -117,7 +117,7 @@ https://www.youtube.com/ms.noormohammadenterprise
         </div>
 
     </div>
-    <div class="max-w-[1280px] mx-auto">
+    <div class="max-w-[1280px] mx-auto px-3">
         <div
             class="title w-full relative before:absolute before:conent-[''] before:h-full before:w-1 before:bg-primary before:left-0 before:top-0 mb-8">
             <h2 class="text-md font-raleway font-bold text-white uppercase ml-5">Conclusion</h2>
