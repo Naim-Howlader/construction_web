@@ -76,7 +76,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     });
     //---------For entering into the news section in admin panel
 
-    Route::get('/news', [NewsCategoryController::class, 'newsView'])->name('news');
+    Route::get('/readimix', [NewsCategoryController::class, 'newsView'])->name('news');
     Route::group(['prefix' => 'news', 'as' => 'category.'], function () {
         //---------News Category Route--------
         Route::get('/add-category', [NewsCategoryController::class, 'addNewsCat'])->name('add');
@@ -86,7 +86,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
         Route::post('/update-category/{id}', [NewsCategoryController::class, 'update'])->name('update');
     });
     //---------News Route---------
-    Route::group(['prefix' => 'news', 'as' => 'news.'], function () {
+    Route::group(['prefix' => 'readimix', 'as' => 'news.'], function () {
         Route::get('/add-news', [NewsController::class, 'addNews'])->name('add');
         Route::post('/insert-news', [NewsController::class, 'insert'])->name('insert');
         Route::get('/delete-news/{id}', [NewsController::class, 'destroy'])->name('delete');
