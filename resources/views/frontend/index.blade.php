@@ -485,7 +485,7 @@
                             <form action="" method="post">
                                 <input type="text"
                                     class="p-3 bg-black w-full ring-1 ring-slate-600 focus:ring-slate-500 outline-none border-none focus:bg-white focus:text-black"
-                                    placeholder="your email here and hit enter">
+                                    placeholder="please enter your mail to get latest update">
                             </form>
                         </div>
                     </div>
