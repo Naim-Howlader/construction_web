@@ -76,7 +76,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {
     });
     //---------For entering into the news section in admin panel
 
-    Route::get('/news', [NewsCategoryController::class, 'newsView'])->name('news');
+    Route::get('/readimix', [NewsCategoryController::class, 'newsView'])->name('news');
     Route::group(['prefix' => 'news', 'as' => 'category.'], function () {
         //---------News Category Route--------
         Route::get('/add-category', [NewsCategoryController::class, 'addNewsCat'])->name('add');
